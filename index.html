@@ -1,59 +1,71 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Alphanex</title>
+    <title>AutoEstimate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>La soumission la plus rapide et précise pour vos besoins en entretien ménager</h1>
+    <h1>AutoEstimate</h1>
     <nav>
-        <a href="#services">Services</a>
-        <a href="#apropos">À propos</a>
+        <a href="#estimate">Get Estimate</a>
+        <a href="#how">How it Works</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>Des solutions simples et efficaces</h2>
-    <p>Nous aidons nos clients à atteindre leurs objectifs.</p>
-    <button onclick="scrollToContact()">Nous contacter</button>
+    <h2>Instant Automated Estimates</h2>
+    <p>Get a fast and accurate price in seconds.</p>
+    <a href="#estimate" class="btn">Start Estimation</a>
 </section>
 
-<section id="services">
-    <h2>Nos services</h2>
-    <div class="cards">
-        <div class="card">Service 1</div>
-        <div class="card">Service 2</div>
-        <div class="card">Service 3</div>
+<section id="estimate" class="estimate">
+    <h2>Estimate Calculator</h2>
+
+    <label>Service Type</label>
+    <select id="service">
+        <option value="100">Basic Service — $100</option>
+        <option value="200">Standard Service — $200</option>
+        <option value="350">Premium Service — $350</option>
+    </select>
+
+    <label>Size (units)</label>
+    <input type="number" id="size" min="1" value="1">
+
+    <label>
+        <input type="checkbox" id="urgent">
+        Urgent Service (+20%)
+    </label>
+
+    <button onclick="calculateEstimate()">Calculate</button>
+
+    <div class="result">
+        Estimated Price: <span id="price">$0</span>
     </div>
 </section>
 
-<section id="apropos">
-    <h2>À propos</h2>
-    <p>
-        Nous sommes une entreprise spécialisée dans des solutions modernes et adaptées à vos besoins.
-    </p>
+<section id="how">
+    <h2>How It Works</h2>
+    <div class="steps">
+        <div>1️⃣ Choose your service</div>
+        <div>2️⃣ Enter your details</div>
+        <div>3️⃣ Get your estimate instantly</div>
+    </div>
 </section>
 
 <section id="contact">
-    <h2>Contact</h2>
-    <form>
-        <input type="text" placeholder="Nom" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
+    <h2>Contact Us</h2>
+    <p>Email: info@autoestimate.com</p>
 </section>
 
 <footer>
-    <p>© 2026 - Mon Entreprise</p>
+    © 2026 AutoEstimate. All rights reserved.
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-
