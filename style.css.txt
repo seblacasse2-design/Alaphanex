@@ -1,11 +1,11 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+   font-family: 'Segoe UI', Arial, sans-serif;
     color: #333;
 }
 
 header {
-    background: #0f172a;
+    background: #111827; /* dark blue */
     color: white;
     padding: 15px;
     display: flex;
@@ -14,13 +14,13 @@ header {
 }
 
 nav a {
-    color: white;
+    color: dark blue;
     margin-left: 15px;
     text-decoration: none;
 }
 
 .hero {
-    background: linear-gradient(120deg, #2563eb, #1e40af);
+    background: linear-gradient(120deg, #22c55e, #15803d);
     color: white;
     padding: 80px 20px;
     text-align: center;
@@ -84,3 +84,4 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
