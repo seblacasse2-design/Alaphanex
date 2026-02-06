@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AutoEstimate</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoSubmit SaaS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>AutoEstimate</h1>
+  <div class="container">
+    <h1 class="logo">AutoSubmit</h1>
     <nav>
-        <a href="#estimate">Get Estimate</a>
-        <a href="#how">How it Works</a>
-        <a href="#contact">Contact</a>
+      <a href="#features">Features</a>
+      <a href="#how">How It Works</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#signup">Sign Up</a>
     </nav>
+  </div>
 </header>
 
 <section class="hero">
-    <h2>Instant Automated Estimates</h2>
-    <p>Get a fast and accurate price in seconds.</p>
-    <a href="#estimate" class="btn">Start Estimation</a>
+  <div class="container">
+    <h2>Streamline Your Submission Workflow</h2>
+    <p>Automate intake, review, and results — all in one platform.</p>
+    <a href="#signup" class="btn hero-btn">Get Started</a>
+  </div>
 </section>
 
-<section id="estimate" class="estimate">
-    <h2>Estimate Calculator</h2>
-
-    <label>Service Type</label>
-    <select id="service">
-        <option value="100">Basic Service — $100</option>
-        <option value="200">Standard Service — $200</option>
-        <option value="350">Premium Service — $350</option>
-    </select>
-
-    <label>Size (units)</label>
-    <input type="number" id="size" min="1" value="1">
-
-    <label>
-        <input type="checkbox" id="urgent">
-        Urgent Service (+20%)
-    </label>
-
-    <button onclick="calculateEstimate()">Calculate</button>
-
-    <div class="result">
-        Estimated Price: <span id="price">$0</span>
+<section id="features" class="features container">
+  <h3>Features That Matter</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>Intuitive Forms</h4>
+      <p>Create forms with smart validation and conditional logic.</p>
     </div>
-</section>
-
-<section id="how">
-    <h2>How It Works</h2>
-    <div class="steps">
-        <div>1️⃣ Choose your service</div>
-        <div>2️⃣ Enter your details</div>
-        <div>3️⃣ Get your estimate instantly</div>
+    <div class="card">
+      <h4>Flexible Workflows</h4>
+      <p>Build multi-stage workflows for data intake and approval.</p>
     </div>
+    <div class="card">
+      <h4>Secure & Scalable</h4>
+      <p>Enterprise-grade security and user controls.</p>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@autoestimate.com</p>
+<section id="how" class="how container">
+  <h3>How It Works</h3>
+  <ol>
+    <li>Create your submission form</li>
+    <li>Invite users or teams</li>
+    <li>Review and manage data in real time</li>
+  </ol>
+</section>
+
+<section id="signup" class="signup container">
+  <h3>Ready to Get Started?</h3>
+  <p>Launch your submission workflow in minutes.</p>
+  <button class="btn">Sign Up for Free</button>
+</section>
+
+<section id="contact" class="contact container">
+  <h3>Contact Us</h3>
+  <p>Email: support@autosubmit.com</p>
 </section>
 
 <footer>
-    © 2026 AutoEstimate. All rights reserved.
+  <p>© 2026 AutoSubmit SaaS — All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
