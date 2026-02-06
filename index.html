@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Mon Entreprise</h1>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Des solutions simples et efficaces</h2>
+    <p>Nous aidons nos clients à atteindre leurs objectifs.</p>
+    <button onclick="scrollToContact()">Nous contacter</button>
+</section>
+
+<section id="services">
+    <h2>Nos services</h2>
+    <div class="cards">
+        <div class="card">Service 1</div>
+        <div class="card">Service 2</div>
+        <div class="card">Service 3</div>
+    </div>
+</section>
+
+<section id="apropos">
+    <h2>À propos</h2>
+    <p>
+        Nous sommes une entreprise spécialisée dans des solutions modernes et adaptées à vos besoins.
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <form>
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 - Mon Entreprise</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
