@@ -200,3 +200,19 @@ nav a {
     font-size: 36px;
   }
 }
+
+.contact {
+  background: #2563eb;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact a {
+  color: #e0f2fe;
+  text-decoration: underline;
+}
+
+.contact a:hover {
+  color: #c7d2fe;
+}
