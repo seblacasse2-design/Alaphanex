@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Alphanex — simplified estimations</title>
+  <title>Alphanex — Votre assistant lifestyle IA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,10 +13,10 @@
   <div class="container nav">
     <div class="logo">Alphanex</div>
     <nav>
-      <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a class="nav-btn" href="#demo">Request Demo</a>
+      <a href="#features">Fonctionnalités</a>
+      <a href="#how">Comment ça marche</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-btn" href="#demo">Demander un demo</a>
     </nav>
   </div>
 </header>
@@ -26,20 +24,17 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <h1>Submission Management, Simplified</h1>
-      <p>
-        Build powerful intake forms, automate workflows, and review submissions
-        in one modern platform.
-      </p>
+      <h1>Améliorez votre quotidien avec Alphanex</h1>
+      <p>Votre assistant lifestyle IA organise votre journée, suit votre santé, booste votre créativité et rend vos loisirs plus agréables.</p>
       <div class="hero-actions">
-        <a href="#demo" class="btn-primary">Get Started</a>
-        <a href="#how" class="btn-secondary">See How It Works</a>
+        <a href="#demo" class="btn-primary">Demander un demo</a>
+        <a href="#how" class="btn-secondary">Voir comment ça marche</a>
       </div>
     </div>
 
     <div class="hero-card">
-      <h3>Live Example</h3>
-      <p>Automated submission flow</p>
+      <h3>Aperçu</h3>
+      <p>Planification quotidienne, suggestions santé et loisirs, coaching personnalisé.</p>
       <div class="mock-row"></div>
       <div class="mock-row short"></div>
       <div class="mock-row"></div>
@@ -49,20 +44,24 @@
 
 <section id="features" class="features">
   <div class="container">
-    <h2>Everything you need</h2>
+    <h2>Fonctionnalités clés</h2>
 
     <div class="feature-grid">
       <div class="feature-card">
-        <h3>Smart Forms</h3>
-        <p>Create dynamic forms with logic and validation.</p>
+        <h3>Organisation & Productivité</h3>
+        <p>Planificateur intelligent, gestion des tâches et rappels personnalisés.</p>
       </div>
       <div class="feature-card">
-        <h3>Automated Workflows</h3>
-        <p>Route submissions automatically to the right teams.</p>
+        <h3>Santé & Bien-être</h3>
+        <p>Coach nutrition, suivi activité physique et amélioration du sommeil.</p>
       </div>
       <div class="feature-card">
-        <h3>Secure & Scalable</h3>
-        <p>Enterprise-grade security with role-based access.</p>
+        <h3>Créativité & Développement</h3>
+        <p>Suggestions lectures, mini-cours, méditation guidée et journalisation.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Lifestyle & Divertissement</h3>
+        <p>Recommandations sorties, voyages, projets créatifs et playlists personnalisées.</p>
       </div>
     </div>
   </div>
@@ -70,67 +69,65 @@
 
 <section id="how" class="how">
   <div class="container">
-    <h2>How it works</h2>
-
+    <h2>Comment ça marche</h2>
     <div class="steps">
       <div class="step">
         <span>01</span>
-        <h4>Create</h4>
-        <p>Build your form in minutes.</p>
+        <h4>Créer un profil</h4>
+        <p>Répondez à quelques questions sur vos habitudes, objectifs et goûts.</p>
       </div>
       <div class="step">
         <span>02</span>
-        <h4>Collect</h4>
-        <p>Share your link and receive submissions.</p>
+        <h4>Recevoir un plan personnalisé</h4>
+        <p>L’IA propose repas, exercices, lectures et rappels adaptés à votre rythme.</p>
       </div>
       <div class="step">
         <span>03</span>
-        <h4>Review</h4>
-        <p>Manage everything in one dashboard.</p>
+        <h4>Amélioration continue</h4>
+        <p>L’IA apprend de vos retours pour affiner ses recommandations.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="pricing" class="pricing">
-  <div class="container">
-    <h2>Simple pricing</h2>
-
-    <div class="pricing-card">
-      <h3>Starter</h3>
-      <p class="price">$29 / month</p>
-      <ul>
-        <li>Unlimited forms</li>
-        <li>Basic workflows</li>
-        <li>Email support</li>
-      </ul>
-      <a href="#demo" class="btn-primary">Start Free Trial</a>
     </div>
   </div>
 </section>
 
 <section id="demo" class="cta">
   <div class="container">
-    <h2>Ready to automate your submissions?</h2>
-    <p>Join modern teams using AutoSubmit today.</p>
-    <a href="#" class="btn-primary large">Request a Demo</a>
+    <h2>Demandez un demo</h2>
+    <p>Remplissez le formulaire et nous vous contacterons rapidement.</p>
+
+    <form
+      name="demo-request"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="demo-form"
+    >
+      <input type="hidden" name="form-name" value="demo-request">
+
+      <p style="display:none;">
+        <label>Ne remplissez pas ceci: <input name="bot-field"></label>
+      </p>
+
+      <input type="text" name="name" placeholder="Nom complet" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="company" placeholder="Nom de l'entreprise" required>
+
+      <button type="submit" class="btn-primary large">Demander un demo</button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Pour toute question ou partenariat :</p>
+    <p><strong>Email:</strong> <a href="mailto:seb.lacasse2@gmail.com">seb.lacasse2@gmail.com</a></p>
   </div>
 </section>
 
 <footer class="footer">
-  © 2026 AutoSubmit — All rights reserved
+  © 2026 Alphanex — Tous droits réservés
 </footer>
 
 </body>
 </html>
-
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>If you want to reach me, you can email me at:</p>
-    <p><strong>Email:</strong> <a href="mailto:seb.lacasse2@gmail.com">seb.lacasse2@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sebastien-lacasse/" target="_blank">sebastien-lacasse</a></p>
-    <p><strong>Phone:</strong> +1 (514) 641-6145</p>
-  </div>
-</section>
-
