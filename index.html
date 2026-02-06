@@ -179,7 +179,38 @@
   © 2026 Alphanex — Tous droits réservés
 </footer>
 
+<script>
+document.getElementById('ia-form').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const name = document.getElementById('user-name').value;
+  const goal = document.getElementById('user-goal').value;
+  const habits = document.getElementById('user-habits').value;
+
+  const plan = [
+    `Commencez la journée avec 15 minutes d'exercice adapté à votre rythme (${habits})`,
+    `Petit-déjeuner recommandé pour atteindre votre objectif : ${goal}`,
+    `Lecture ou podcast de 30 minutes pour stimuler votre créativité`,
+    `Pause méditation de 10 minutes pour le bien-être mental`,
+    `Planification de vos tâches prioritaires de la journée`
+  ];
+
+  document.getElementById('result-name').innerText = name;
+  const planList = document.getElementById('result-plan');
+  planList.innerHTML = '';
+  plan.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    planList.appendChild(li);
+  });
+
+  document.getElementById('ia-result').style.display = 'block';
+});
+</script>
+
+
 </body>
 </html>
+
 
 
