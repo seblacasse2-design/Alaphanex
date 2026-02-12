@@ -3,174 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Site Professionnel</title>
+  <title>Alphanex - Solutions Innovantes</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    /* HEADER */
-    .header {
-      background: rgba(15, 23, 42, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-    }
-
-    .logo {
-      color: white;
-      font-weight: 700;
-      font-size: 20px;
-    }
-
-    nav a {
-      color: #cbd5e1;
-      margin-left: 25px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover { color: white; }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
-      padding: 120px 0;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #c7d2fe;
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 30px;
-    }
-
-    /* BUTTON */
-    .btn-primary {
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
-      padding: 14px 28px;
-      border-radius: 30px;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      transition: 0.3s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(37,99,235,0.4);
-    }
-
-    .large { width: 100%; }
-
-    /* SECTIONS */
-    .section {
-      padding: 100px 0;
-      text-align: center;
-    }
-
-    .section.light { background: #eef2ff; }
-
-    h2 { margin-bottom: 40px; }
-
-    .center-text {
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 40px;
-      color: #475569;
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-    }
-
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    /* FORM */
-    .form {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .form input, .form textarea {
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #cbd5e1;
-    }
-
-    .form input:focus, .form textarea:focus {
-      outline: none;
-      border-color: #2563eb;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #0f172a;
-      color: #94a3b8;
-      text-align: center;
-      padding: 25px;
-    }
-
-    .footer a {
-      color: #93c5fd;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero h1 { font-size: 34px; }
-      .grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -236,10 +71,15 @@
     <div class="container">
       <h2>Contactez-nous</h2>
       <p class="center-text">Remplissez le formulaire ci-dessous pour demander une démo ou obtenir plus d'informations.</p>
-      <form class="form">
-        <input type="text" placeholder="Nom" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="5" placeholder="Message" required></textarea>
+      <form class="form" action="https://formsubmit.co/seb.lacasse2@gmail.com" method="POST">
+        <!-- Sujet personnalisé -->
+        <input type="hidden" name="_subject" value="Nouvelle demande de démo !">
+        <!-- Redirection vers la page de remerciement -->
+        <input type="hidden" name="_next" value="merci.html">
+
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
         <button type="submit" class="btn-primary large">Envoyer</button>
       </form>
     </div>
@@ -252,15 +92,3 @@
 
 </body>
 </html>
-
-<form class="form" action="https://formsubmit.co/seb.lacasse2@gmail.com" method="POST">
-  <!-- Sujet personnalisé -->
-  <input type="hidden" name="_subject" value="Nouvelle demande de démo !">
-  <!-- Redirection vers la page de remerciement -->
-  <input type="hidden" name="_next" value="merci.html">
-
-  <input type="text" name="name" placeholder="Nom" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="message" rows="5" placeholder="Message" required></textarea>
-  <button type="submit" class="btn-primary large">Envoyer</button>
-</form>
