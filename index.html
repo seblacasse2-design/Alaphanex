@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>TransPro — Transport de machinerie et équipements</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cenoplam | Innovation & Performance</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <div class="logo">TransPro</div>
+    <div class="logo">Cenoplam</div>
     <nav>
-      <a href="#services">Services</a>
+      <a href="#product">Produit</a>
+      <a href="#advantages">Avantages</a>
       <a href="#gallery">Galerie</a>
-      <a href="#contact">Contact</a>
+      <a href="#demo">Démo</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Transport rapide et sécurisé de vos équipements</h1>
-      <p>TransPro offre un service professionnel pour transporter vos machineries, remorques et cargaisons avec fiabilité et sécurité.</p>
-      <a href="#contact" class="btn-primary">Demander un service</a>
+  <div class="container hero-content">
+    <h1>Une solution innovante pour des performances supérieures</h1>
+    <p>Cenoplam révolutionne votre efficacité grâce à une technologie avancée et une qualité supérieure.</p>
+    <a href="#demo" class="btn-primary">Demander une démonstration</a>
+  </div>
+</section>
+
+<section id="product" class="section">
+  <div class="container">
+    <h2>Qu’est-ce que Cenoplam ?</h2>
+    <p class="center-text">
+      Cenoplam est un produit innovant conçu pour optimiser vos performances,
+      améliorer la durabilité et maximiser l’efficacité opérationnelle.
+    </p>
+  </div>
+</section>
+
+<section id="advantages" class="section light">
+  <div class="container">
+    <h2>Pourquoi choisir Cenoplam ?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Performance accrue</h3>
+        <p>Optimise les résultats avec une efficacité mesurable.</p>
+      </div>
+      <div class="card">
+        <h3>Durabilité</h3>
+        <p>Conçu avec des matériaux de haute qualité pour une longue durée de vie.</p>
+      </div>
+      <div class="card">
+        <h3>Installation simple</h3>
+        <p>Mise en place rapide et intégration facile.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="services" class="services">
+<section id="gallery" class="section">
   <div class="container">
-    <h2>Nos services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Transport de machinerie</h3>
-        <p>Nous transportons tous types de machineries lourdes et légères en toute sécurité.</p>
-      </div>
-      <div class="service-card">
-        <h3>Location de remorques</h3>
-        <p>Remorques 20 à 40 pieds adaptées à vos besoins, avec assistance technique.</p>
-      </div>
-      <div class="service-card">
-        <h3>Livraison rapide</h3>
-        <p>Optimisation des trajets pour garantir une livraison rapide et fiable.</p>
-      </div>
+    <h2>Galerie produit</h2>
+    <div class="gallery">
+      <img src="images/product1.jpg" alt="Produit Cenoplam">
+      <img src="images/product2.jpg" alt="Produit Cenoplam">
+      <img src="images/product3.jpg" alt="Produit Cenoplam">
     </div>
   </div>
 </section>
 
-<section id="gallery" class="gallery">
+<section id="demo" class="section demo-section">
   <div class="container">
-    <h2>Notre flotte et opérations</h2>
-    <div class="gallery-grid">
-      <img src="images/truck1.jpg" alt="Camion de transport">
-      <img src="images/truck2.jpg" alt="Remorque">
-      <img src="images/machinery1.jpg" alt="Machinerie">
-      <img src="images/machinery2.jpg" alt="Chargement sécurisé">
-    </div>
-  </div>
-</section>
+    <h2>Demande de démonstration</h2>
+    <p class="center-text">Remplissez le formulaire et notre équipe vous contactera rapidement.</p>
 
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Contactez-nous</h2>
-    <p>Remplissez le formulaire pour demander un service ou un devis.</p>
-
-    <form name="service-request" method="POST" data-netlify="true" class="demo-form">
-      <input type="hidden" name="form-name" value="service-request">
-      <p style="display:none;">
-        <label>Ne remplissez pas ceci: <input name="bot-field"></label>
-      </p>
+    <form name="demo-request" method="POST" data-netlify="true" class="form">
+      <input type="hidden" name="form-name" value="demo-request">
 
       <input type="text" name="name" placeholder="Nom complet" required>
-      <input type="email" name="email" placeholder="Email" required>
+      <input type="email" name="email" placeholder="Adresse courriel" required>
       <input type="text" name="company" placeholder="Entreprise" required>
-      <input type="text" name="service" placeholder="Service souhaité" required>
-      <textarea name="message" placeholder="Message / détails" rows="4"></textarea>
+      <textarea name="message" placeholder="Informations supplémentaires" rows="4"></textarea>
 
-      <button type="submit" class="btn-primary large">Envoyer</button>
+      <button type="submit" class="btn-primary large">Envoyer la demande</button>
     </form>
   </div>
 </section>
 
 <footer class="footer">
-  © 2026 TransPro — Contact: <a href="mailto:seb.lacasse2@gmail.com">seb.lacasse2@gmail.com</a>
+  © 2026 Cenoplam | Contact : <a href="mailto:seb.lacasse2@gmail.com">seb.lacasse2@gmail.com</a>
 </footer>
 
 </body>
