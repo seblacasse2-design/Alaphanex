@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alphanex — Entretien Ménager Résidentiel & Commercial | Montréal</title>
+  <meta name="description" content="Alphanex offre des services d'entretien ménager professionnel résidentiel et commercial à Montréal et environs. Demandez une soumission gratuite dès aujourd'hui."/>
+  <meta property="og:title" content="Alphanex — Entretien Ménager Professionnel"/>
+  <meta property="og:description" content="Services de nettoyage résidentiel et commercial à Montréal. Équipe fiable, résultats impeccables."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:  #0a1628;
+      --navy2: #112240;
+      --navy3: #1a3a5c;
+      --gold:  #c9a84c;
+      --goldl: #e8c97a;
+      --teal:  #1a7a6e;
+      --teal2: #22a093;
+      --white: #ffffff;
+      --off:   #f7f9fc;
+      --gray:  #7a8494;
+      --lgray: #e4eaf3;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:var(--navy);color:var(--navy);overflow-x:hidden}
+
+    /* ══ LOGO COMPONENT ══ */
+    .lmw{position:relative;display:inline-block}
+    .lmw.xl{width:130px;height:130px}
+    .lmw.md{width:48px;height:48px}
+    .lmw.sm{width:36px;height:36px}
+    .lm-glow{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.12) 0%,transparent 70%);animation:glow 3s ease-in-out infinite}
+    @keyframes glow{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
+    .lm-r1{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(201,168,76,.3);animation:spin1 18s linear infinite}
+    .lm-r1::before{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:var(--gold);border-radius:50%}
+    @keyframes spin1{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .lm-r2{position:absolute;inset:8%;border-radius:50%;border:1px solid rgba(201,168,76,.12);animation:spin1 25s linear infinite reverse}
+    .lm-core{position:absolute;inset:16%;background:linear-gradient(145deg,#112240,#0a1628);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,168,76,.4);box-shadow:0 0 20px rgba(201,168,76,.08),inset 0 1px 0 rgba(255,255,255,.04)}
+    .lm-a{font-family:'Cormorant Garamond',serif;font-weight:600;color:transparent;background:linear-gradient(160deg,#e8c97a 0%,#c9a84c 45%,#a8852e 100%);-webkit-background-clip:text;background-clip:text;line-height:1;position:relative}
+    .xl .lm-a{font-size:3.4rem;top:4px}
+    .md .lm-a{font-size:1.3rem;top:2px}
+    .sm .lm-a{font-size:.95rem;top:1px}
+    .sm .lm-r1,.sm .lm-r2{display:none}
+    .sm .lm-core{inset:0;border-radius:8px}
+
+    /* ══ PAGE CONTROL ══ */
+    #pgSplash,#pgMain,#pgStory{display:none}
+    #pgSplash{display:flex}
+
+    /* ══ SPLASH ══ */
+    #pgSplash{
+      position:fixed;inset:0;z-index:9000;
+      flex-direction:column;align-items:center;justify-content:center;
+      background:var(--navy);overflow:hidden;
+    }
+    .sp-grad{position:absolute;inset:0;background:radial-gradient(ellipse 100% 70% at 50% 100%,rgba(26,122,110,.25) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 0% 0%,rgba(201,168,76,.06) 0%,transparent 50%)}
+    .sp-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:80px 80px;animation:gshift 20s ease-in-out infinite}
+    @keyframes gshift{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,-20px)}}
+    .sp-ptc{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+    .sp-p{position:absolute;border-radius:50%;background:var(--gold);opacity:0;animation:fup var(--d) var(--dl) infinite ease-in-out}
+    @keyframes fup{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.5}90%{opacity:.12}100%{opacity:0;transform:translateY(-20px) scale(1.5)}}
+    .sp-co{position:absolute;width:55px;height:55px;opacity:.28}
+    .sp-co.tl{top:2rem;left:2rem;border-top:1px solid var(--gold);border-left:1px solid var(--gold)}
+    .sp-co.tr{top:2rem;right:2rem;border-top:1px solid var(--gold);border-right:1px solid var(--gold)}
+    .sp-co.bl{bottom:2rem;left:2rem;border-bottom:1px solid var(--gold);border-left:1px solid var(--gold)}
+    .sp-co.br{bottom:2rem;right:2rem;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)}
+    .sp-body{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:2rem;animation:fadeUp 1.2s ease .3s both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .sp-logowrap{margin-bottom:2rem;animation:logoIn 1.5s cubic-bezier(.16,1,.3,1) .5s both}
+    @keyframes logoIn{from{opacity:0;transform:scale(.7) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+    .sp-brand{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,4.2rem);font-weight:600;color:var(--white);letter-spacing:10px;text-transform:uppercase}
+    .sp-brand .g{color:var(--gold)}
+    .sp-divrow{display:flex;align-items:center;gap:1rem;width:280px;margin:.8rem 0 1.4rem}
+    .sp-divl{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.5),transparent)}
+    .sp-divd{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+    .sp-lang{display:flex;gap:.5rem;margin-bottom:1.8rem}
+    .sp-lb{background:none;border:1px solid rgba(201,168,76,.3);color:rgba(255,255,255,.45);padding:4px 14px;border-radius:20px;font-size:.65rem;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:2px;transition:all .3s}
+    .sp-lb.on,.sp-lb:hover{background:rgba(201,168,76,.1);border-color:var(--gold);color:var(--gold)}
+    .sp-tag{font-size:.6rem;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.7rem}
+    .sp-desc{font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2vw,1.35rem);font-weight:300;color:rgba(255,255,255,.62);line-height:1.75;max-width:440px;margin-bottom:2.5rem}
+    .sp-desc em{color:var(--teal2);font-style:normal}
+    .sp-btn{position:relative;background:transparent;border:1px solid rgba(201,168,76,.5);color:var(--gold);padding:15px 52px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;cursor:pointer;overflow:hidden;transition:all .4s}
+    .sp-btn::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+    .sp-btn:hover::before{transform:scaleX(1)}
+    .sp-btn:hover{color:var(--navy);box-shadow:0 0 40px rgba(201,168,76,.2)}
+    .sp-btn span{position:relative;z-index:1;transition:color .4s}
+    .sp-arr{display:inline-block;margin-left:8px;transition:transform .3s}
+    .sp-btn:hover .sp-arr{transform:translateX(5px)}
+    .sp-loc{margin-top:2rem;font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.18)}
+    .sp-loc b{color:rgba(201,168,76,.35)}
+    #pgSplash.out{animation:splashOut .8s ease forwards}
+    @keyframes splashOut{to{opacity:0;transform:scale(1.04)}}
+
+    /* ══ NAV ══ */
+    #nav{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;height:70px;align-items:center;justify-content:space-between;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15);transition:box-shadow .3s}
+    #nav.show{display:flex}
+    .nav-logo{display:flex;align-items:center;gap:.7rem;cursor:pointer;text-decoration:none}
+    .nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--white);letter-spacing:4px;text-transform:uppercase}
+    .nav-brand .g{color:var(--gold)}
+    .nav-links{display:flex;gap:2.2rem;list-style:none}
+    .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.7rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s;cursor:pointer}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-r{display:flex;gap:.4rem}
+    .nlb{background:none;border:1px solid rgba(201,168,76,.28);color:rgba(255,255,255,.5);padding:3px 10px;border-radius:4px;font-size:.65rem;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:1px;transition:all .3s}
+    .nlb.on,.nlb:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    @media(max-width:768px){.nav-links{display:none}}
+
+    /* ══ HERO ══ */
+    #hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(26,58,92,.7) 0%,transparent 70%),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(26,122,110,.15) 0%,transparent 60%)}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px);background-size:60px 60px}
+    /* Floating sparkles */
+    .sparkle{position:absolute;opacity:0;animation:sparkleAnim var(--sd) var(--ss) infinite}
+    @keyframes sparkleAnim{0%,100%{opacity:0;transform:scale(0) rotate(0)}50%{opacity:.6;transform:scale(1) rotate(180deg)}}
+    .hero-inner{position:relative;z-index:2;padding:0 10%;max-width:1200px;margin:0 auto;width:100%;padding-top:70px}
+    .hero-badge{display:inline-flex;align-items:center;gap:.6rem;font-size:.62rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--teal2);border:1px solid rgba(34,160,147,.3);padding:6px 16px;border-radius:2px;margin-bottom:2rem}
+    .badge-dot{width:6px;height:6px;background:var(--teal2);border-radius:50%;animation:blink 2s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6.5vw,5.8rem);font-weight:600;color:var(--white);line-height:1.08;margin-bottom:1.5rem}
+    .hero-title .accent{color:var(--gold)}
+    .hero-title .accent2{color:var(--teal2)}
+    .hero-sub{font-size:clamp(.88rem,1.6vw,1.05rem);color:rgba(255,255,255,.55);font-weight:300;max-width:500px;line-height:1.95;margin-bottom:3rem}
+    .hero-cta{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:4rem}
+    .btn-gold{background:var(--gold);color:var(--navy);padding:14px 36px;border:none;border-radius:2px;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Montserrat',sans-serif}
+    .btn-gold:hover{background:var(--goldl);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.28)}
+    .btn-teal{background:var(--teal);color:var(--white);padding:14px 36px;border:none;border-radius:2px;font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Montserrat',sans-serif}
+    .btn-teal:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,122,110,.3)}
+    .btn-outline{background:transparent;color:var(--white);padding:14px 36px;border:1px solid rgba(255,255,255,.22);border-radius:2px;font-size:.72rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Montserrat',sans-serif}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    /* Trust badges */
+    .trust-row{display:flex;gap:2rem;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:.6rem}
+    .trust-icon{width:36px;height:36px;background:rgba(34,160,147,.12);border:1px solid rgba(34,160,147,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+    .trust-text{font-size:.7rem;color:rgba(255,255,255,.45);letter-spacing:.5px}
+    .trust-text strong{color:rgba(255,255,255,.75);display:block;font-size:.72rem;margin-bottom:1px}
+
+    /* ══ SECTIONS ══ */
+    .sec{padding:7rem 10%}
+    .sec-off{background:var(--off)}
+    .sec-navy{background:var(--navy)}
+    .sec-white{background:var(--white)}
+    .sec-teal{background:linear-gradient(135deg,#0d2a26,#0a1f1c)}
+    .shd{text-align:center;margin-bottom:4.5rem}
+    .stag{font-size:.62rem;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+    .stag-t{color:var(--teal2)}
+    .stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;color:var(--navy);line-height:1.18}
+    .stitle-w{color:var(--white)}
+    .sline{width:44px;height:1px;background:var(--gold);margin:1.4rem auto}
+    .sline-t{background:var(--teal2)}
+    .sdesc{color:var(--gray);font-size:.86rem;max-width:460px;margin:0 auto;line-height:1.95}
+    .sdesc-w{color:rgba(255,255,255,.48)}
+
+    /* ══ SERVICES ══ */
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
+    .svc-card{background:var(--white);border:1px solid var(--lgray);border-radius:4px;padding:2.2rem 1.8rem;transition:all .4s;position:relative;overflow:hidden;cursor:default}
+    .svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--teal2);transform:scaleX(0);transition:transform .4s}
+    .svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(10,22,40,.1);border-color:transparent}
+    .svc-card:hover::after{transform:scaleX(1)}
+    .svc-ico{width:52px;height:52px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.3rem;font-size:1.4rem}
+    .svc-lbl{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal2);margin-bottom:.4rem;display:block}
+    .svc-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:.6rem}
+    .svc-desc{color:var(--gray);font-size:.82rem;line-height:1.82}
+    .svc-price{margin-top:1rem;font-size:.7rem;font-weight:600;color:var(--teal);letter-spacing:.5px}
+
+    /* ══ WHY US ══ */
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+    .why-card{text-align:center;padding:2rem 1.5rem}
+    .why-ico{font-size:2.2rem;margin-bottom:1rem;display:block}
+    .why-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--white);margin-bottom:.6rem}
+    .why-text{color:rgba(255,255,255,.42);font-size:.8rem;line-height:1.8}
+
+    /* ══ TESTIMONIALS ══ */
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+    .testi-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:2rem}
+    .testi-stars{color:var(--gold);font-size:1rem;margin-bottom:1rem;letter-spacing:2px}
+    .testi-text{color:rgba(255,255,255,.6);font-size:.84rem;line-height:1.85;font-style:italic;margin-bottom:1.2rem}
+    .testi-author{font-size:.7rem;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
+
+    /* ══ STATS ══ */
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;max-width:900px;margin:0 auto;text-align:center}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--teal2);display:block}
+    .stat-lbl{font-size:.65rem;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-top:.3rem;display:block}
+
+    /* ══ CONTACT FORM ══ */
+    .contact-wrap{max-width:780px;margin:0 auto}
+    .contact-box{background:var(--navy);border-radius:6px;padding:3.5rem;position:relative;overflow:hidden}
+    .contact-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal2),var(--gold))}
+    .contact-box h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);margin-bottom:.6rem}
+    .contact-box .sub{color:rgba(255,255,255,.42);font-size:.82rem;margin-bottom:2rem;line-height:1.8}
+    .cf{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .cf-full{grid-column:1/-1}
+    .cf label{font-size:.62rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:.4rem}
+    .cf input,.cf select,.cf textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:12px 14px;color:var(--white);font-family:'Montserrat',sans-serif;font-size:.82rem;outline:none;transition:border-color .3s;width:100%}
+    .cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,.22)}
+    .cf select option{background:var(--navy2);color:var(--white)}
+    .cf input:focus,.cf select:focus,.cf textarea:focus{border-color:var(--teal2)}
+    .cf textarea{min-height:110px;resize:vertical}
+    .cf-submit{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;margin-top:.5rem;gap:1rem}
+    .form-note{font-size:.7rem;color:rgba(255,255,255,.3);line-height:1.6}
+    .form-note span{color:var(--teal2)}
+    /* Success / Error */
+    #formMsg{display:none;grid-column:1/-1;padding:1rem 1.4rem;border-radius:4px;font-size:.82rem;font-weight:500}
+    #formMsg.ok{background:rgba(26,122,110,.15);border:1px solid rgba(34,160,147,.3);color:var(--teal2)}
+    #formMsg.err{background:rgba(180,30,30,.12);border:1px solid rgba(180,30,30,.3);color:#e87a7a}
+
+    /* ══ FOOTER ══ */
+    footer{background:#060d18;padding:3rem 10%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(201,168,76,.1)}
+    .ft-logo{display:flex;align-items:center;gap:.6rem}
+    .ft-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--white);letter-spacing:4px}
+    .ft-brand .g{color:var(--gold)}
+    .ft-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .ft-links a{font-size:.68rem;color:rgba(255,255,255,.3);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .3s;cursor:pointer}
+    .ft-links a:hover{color:var(--gold)}
+    footer p{font-size:.68rem;color:rgba(255,255,255,.22)}
+
+    /* ══ STORY PAGE ══ */
+    .story-hero{background:var(--navy);padding:10rem 10% 6rem;position:relative;overflow:hidden}
+    .story-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(26,58,92,.8) 0%,transparent 70%),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(26,122,110,.12) 0%,transparent 60%)}
+    .story-inner{position:relative;z-index:2;max-width:680px}
+    .story-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,3.8rem);color:var(--white);line-height:1.12;margin-bottom:1.5rem}
+    .story-hero h1 em{color:var(--teal2);font-style:normal}
+    .story-hero p{color:rgba(255,255,255,.55);font-size:.94rem;line-height:1.95}
+    .story-body{padding:5rem 10%;max-width:1100px;margin:0 auto}
+    .tl{position:relative;margin:3rem 0 4rem}
+    .tl::before{content:'';position:absolute;left:27px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--teal2),rgba(10,22,40,.2))}
+    .tl-item{display:flex;gap:2rem;margin-bottom:2.8rem}
+    .tl-dot{width:56px;height:56px;min-width:56px;background:var(--navy);border:1px solid var(--teal2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;z-index:2}
+    .tl-box{background:var(--off);border:1px solid var(--lgray);border-radius:5px;padding:1.8rem 2rem;flex:1;transition:all .3s}
+    .tl-box:hover{border-color:rgba(34,160,147,.3);box-shadow:0 8px 24px rgba(10,22,40,.07)}
+    .tl-yr{font-size:.62rem;font-weight:700;letter-spacing:2px;color:var(--teal2);text-transform:uppercase;display:block;margin-bottom:.4rem}
+    .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:.6rem}
+    .tl-text{color:var(--gray);font-size:.84rem;line-height:1.8}
+    .vals{background:linear-gradient(135deg,#0d2a26,#0a1f1c);border-radius:8px;padding:3.5rem;margin:3rem 0}
+    .vals h2{font-family:'Cormorant Garamond',serif;color:var(--white);font-size:1.9rem;text-align:center;margin-bottom:2.5rem}
+    .vals h2 em{color:var(--teal2);font-style:normal}
+    .vals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem}
+    .val-item{text-align:center}
+    .val-ico{font-size:1.8rem;margin-bottom:.8rem;display:block}
+    .val-title{font-family:'Cormorant Garamond',serif;color:var(--teal2);font-size:1.05rem;margin-bottom:.5rem;display:block}
+    .val-text{color:rgba(255,255,255,.4);font-size:.78rem;line-height:1.75}
+
+    @media(max-width:768px){
+      .sec{padding:5rem 5%}
+      .hero-inner{padding-left:5%;padding-right:5%}
+      .story-hero{padding:8rem 5% 5rem}
+      .story-body{padding:3rem 5%}
+      .cf{grid-template-columns:1fr}
+      .cf-full{grid-column:1}
+      .cf-submit{grid-column:1}
+      .contact-box{padding:2.5rem 1.5rem}
+      .vals{padding:2rem 1.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ SPLASH ══════════════ -->
+<div id="pgSplash">
+  <div class="sp-grad"></div>
+  <div class="sp-grid"></div>
+  <div class="sp-ptc" id="spPtc"></div>
+  <div class="sp-co tl"></div><div class="sp-co tr"></div>
+  <div class="sp-co bl"></div><div class="sp-co br"></div>
+
+  <div class="sp-body">
+    <div class="sp-logowrap">
+      <div class="lmw xl"><div class="lm-glow"></div><div class="lm-r1"></div><div class="lm-r2"></div><div class="lm-core"><span class="lm-a">A</span></div></div>
+    </div>
+    <div style="animation:fadeUp 1s ease .8s both">
+      <span class="sp-brand">ALPHA<span class="g">NEX</span></span>
+    </div>
+    <div class="sp-divrow" style="animation:fadeUp 1s ease .95s both">
+      <div class="sp-divl"></div><div class="sp-divd"></div><div class="sp-divl"></div>
+    </div>
+    <div class="sp-lang" style="animation:fadeUp 1s ease 1s both">
+      <button class="sp-lb on" onclick="spLang('fr')">FR</button>
+      <button class="sp-lb" onclick="spLang('en')">EN</button>
+    </div>
+    <p class="sp-tag">Montréal · Québec · Canada</p>
+    <p class="sp-desc" id="spDesc">Services d'entretien ménager professionnel pour votre maison et votre entreprise. <em>Propre. Fiable. Impeccable.</em></p>
+    <button class="sp-btn" onclick="enterSite()">
+      <span id="spBtnTxt">Découvrir nos services <span class="sp-arr">→</span></span>
+    </button>
+    <p class="sp-loc"><b>✦</b> &nbsp;Alphanex Entretien Ménager · Montréal&nbsp; <b>✦</b></p>
+  </div>
+</div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav id="nav">
+  <div class="nav-logo" onclick="showPg('main')">
+    <div class="lmw sm"><div class="lm-glow"></div><div class="lm-core"><span class="lm-a">A</span></div></div>
+    <span class="nav-brand">ALPHA<span class="g">NEX</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPg('main');go('hero')"><span class="t" data-fr="Accueil" data-en="Home">Accueil</span></a></li>
+    <li><a onclick="showPg('main');go('services')"><span class="t" data-fr="Services" data-en="Services">Services</span></a></li>
+    <li><a onclick="showPg('story')"><span class="t" data-fr="À propos" data-en="About">À propos</span></a></li>
+    <li><a onclick="showPg('main');go('contact')"><span class="t" data-fr="Soumission" data-en="Quote">Soumission</span></a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="nlb on" onclick="setLang('fr')">FR</button>
+    <button class="nlb" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- ══════════════ MAIN PAGE ══════════════ -->
+<div id="pgMain">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="t" data-fr="Résidentiel & Commercial · Montréal" data-en="Residential & Commercial · Montréal">Résidentiel & Commercial · Montréal</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="t"
+          data-fr="Un espace <span class='accent2'>propre</span>,<br>un esprit <span class='accent'>serein.</span>"
+          data-en="A <span class='accent2'>clean</span> space,<br>a <span class='accent'>peaceful</span> mind.">Un espace <span class="accent2">propre</span>,<br>un esprit <span class="accent">serein.</span></span>
+      </h1>
+      <p class="hero-sub t"
+        data-fr="Services d'entretien ménager professionnels pour résidences et entreprises. Équipe fiable, produits de qualité, résultats impeccables — à chaque visite."
+        data-en="Professional cleaning services for homes and businesses. Reliable team, quality products, impeccable results — every single visit.">Services d'entretien ménager professionnels pour résidences et entreprises. Équipe fiable, produits de qualité, résultats impeccables — à chaque visite.</p>
+      <div class="hero-cta">
+        <a class="btn-gold t" data-fr="Demander une soumission" data-en="Get a Free Quote" onclick="go('contact')">Demander une soumission</a>
+        <a class="btn-outline t" data-fr="Nos services" data-en="Our Services" onclick="go('services')">Nos services</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><div class="trust-icon">✓</div><div class="trust-text"><strong class="t" data-fr="Assurés & certifiés" data-en="Insured & certified">Assurés & certifiés</strong><span class="t" data-fr="Tranquillité d'esprit" data-en="Peace of mind">Tranquillité d'esprit</span></div></div>
+        <div class="trust-item"><div class="trust-icon">🌿</div><div class="trust-text"><strong class="t" data-fr="Produits écologiques" data-en="Eco-friendly products">Produits écologiques</strong><span class="t" data-fr="Sans danger pour la famille" data-en="Safe for your family">Sans danger pour la famille</span></div></div>
+        <div class="trust-item"><div class="trust-icon">⭐</div><div class="trust-text"><strong class="t" data-fr="Satisfaction garantie" data-en="Satisfaction guaranteed">Satisfaction garantie</strong><span class="t" data-fr="Ou on revient gratuitement" data-en="Or we come back free">Ou on revient gratuitement</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="sec sec-teal" style="padding:4rem 10%">
+    <div class="stats-grid">
+      <div><span class="stat-num">500+</span><span class="stat-lbl t" data-fr="Clients satisfaits" data-en="Happy clients">Clients satisfaits</span></div>
+      <div><span class="stat-num">5+</span><span class="stat-lbl t" data-fr="Années d'expérience" data-en="Years of experience">Années d'expérience</span></div>
+      <div><span class="stat-num">100%</span><span class="stat-lbl t" data-fr="Satisfaction garantie" data-en="Satisfaction guaranteed">Satisfaction garantie</span></div>
+      <div><span class="stat-num">48h</span><span class="stat-lbl t" data-fr="Délai de réponse" data-en="Response time">Délai de réponse</span></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="sec sec-off">
+    <div class="shd">
+      <span class="stag t" data-fr="Ce que nous offrons" data-en="What We Offer">Ce que nous offrons</span>
+      <h2 class="stitle t" data-fr="Services d'entretien complets" data-en="Complete cleaning services">Services d'entretien complets</h2>
+      <div class="sline sline-t"></div>
+      <p class="sdesc t" data-fr="Du ménage régulier aux grands nettoyages, nous avons la solution adaptée à vos besoins et votre budget." data-en="From regular cleaning to deep cleans, we have the right solution for your needs and budget.">Du ménage régulier aux grands nettoyages, nous avons la solution adaptée à vos besoins et votre budget.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-ico">🏠</div>
+        <span class="svc-lbl t" data-fr="Résidentiel" data-en="Residential">Résidentiel</span>
+        <h3 class="svc-title t" data-fr="Entretien régulier" data-en="Regular Maintenance">Entretien régulier</h3>
+        <p class="svc-desc t" data-fr="Nettoyage hebdomadaire, bihebdomadaire ou mensuel de votre maison. Dépoussiérage, aspirateur, lavage des planchers, salles de bain et cuisine inclus." data-en="Weekly, bi-weekly or monthly cleaning of your home. Dusting, vacuuming, mopping, bathrooms and kitchen included.">Nettoyage hebdomadaire, bihebdomadaire ou mensuel. Dépoussiérage, aspirateur, salles de bain et cuisine inclus.</p>
+        <p class="svc-price t" data-fr="À partir de 120$ / visite" data-en="Starting at $120 / visit">À partir de 120$ / visite</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ico">✨</div>
+        <span class="svc-lbl t" data-fr="Résidentiel" data-en="Residential">Résidentiel</span>
+        <h3 class="svc-title t" data-fr="Grand ménage" data-en="Deep Clean">Grand ménage</h3>
+        <p class="svc-desc t" data-fr="Nettoyage en profondeur de A à Z. Intérieur des armoires, derrière les appareils, fenêtres, plinthes et tout ce qu'on oublie au quotidien." data-en="Top-to-bottom deep cleaning. Inside cabinets, behind appliances, windows, baseboards and everything usually missed.">Nettoyage en profondeur. Intérieur des armoires, fenêtres, plinthes, derrière les appareils.</p>
+        <p class="svc-price t" data-fr="À partir de 250$ / session" data-en="Starting at $250 / session">À partir de 250$ / session</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ico">🏢</div>
+        <span class="svc-lbl t" data-fr="Commercial" data-en="Commercial">Commercial</span>
+        <h3 class="svc-title t" data-fr="Bureaux & commerces" data-en="Offices & Retail">Bureaux & commerces</h3>
+        <p class="svc-desc t" data-fr="Entretien régulier de vos locaux commerciaux, espaces de travail, salles de réunion et zones communes. Horaires flexibles pour ne pas perturber vos opérations." data-en="Regular maintenance of your commercial spaces, offices, meeting rooms and common areas. Flexible scheduling around your operations.">Entretien de bureaux, salles de réunion et zones communes. Horaires flexibles selon vos opérations.</p>
+        <p class="svc-price t" data-fr="Sur devis" data-en="Custom quote">Sur devis</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ico">🏗️</div>
+        <span class="svc-lbl t" data-fr="Spécialisé" data-en="Specialized">Spécialisé</span>
+        <h3 class="svc-title t" data-fr="Post-construction" data-en="Post-construction">Post-construction</h3>
+        <p class="svc-desc t" data-fr="Nettoyage après rénovations ou construction. Élimination de la poussière de plâtre, débris, résidus de peinture et polissage pour un résultat impeccable." data-en="Cleaning after renovations or construction. Removal of plaster dust, debris, paint residue and polishing for a spotless result.">Après rénovations : élimination poussière, débris, résidus de peinture pour un résultat impeccable.</p>
+        <p class="svc-price t" data-fr="Sur devis" data-en="Custom quote">Sur devis</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ico">🔑</div>
+        <span class="svc-lbl t" data-fr="Résidentiel" data-en="Residential">Résidentiel</span>
+        <h3 class="svc-title t" data-fr="Fin de bail" data-en="Move-in / Move-out">Fin de bail</h3>
+        <p class="svc-desc t" data-fr="Nettoyage complet lors d'un déménagement, entrée ou sortie. Récupérez votre dépôt ou accueillez vos nouveaux locataires dans un logement impeccable." data-en="Complete cleaning for move-in or move-out. Get your deposit back or welcome your new tenants to a spotless home.">Nettoyage complet déménagement. Récupérez votre dépôt ou accueillez vos locataires dans un logement impeccable.</p>
+        <p class="svc-price t" data-fr="À partir de 200$" data-en="Starting at $200">À partir de 200$</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-ico">🌿</div>
+        <span class="svc-lbl t" data-fr="Écologique" data-en="Eco-friendly">Écologique</span>
+        <h3 class="svc-title t" data-fr="Nettoyage vert" data-en="Green Cleaning">Nettoyage vert</h3>
+        <p class="svc-desc t" data-fr="Produits 100% écologiques, sans produits chimiques agressifs. Idéal pour les familles avec enfants, personnes allergiques ou simplement soucieuses de l'environnement." data-en="100% eco-friendly products, no harsh chemicals. Ideal for families with children, allergy sufferers, or anyone who cares about the environment.">Produits 100% écologiques. Idéal familles, personnes allergiques, espaces sensibles.</p>
+        <p class="svc-price t" data-fr="Supplément de 15$" data-en="$15 add-on">Supplément de 15$</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="sec sec-navy">
+    <div class="shd">
+      <span class="stag t" data-fr="Pourquoi Alphanex" data-en="Why Alphanex">Pourquoi Alphanex</span>
+      <h2 class="stitle stitle-w t" data-fr="La propreté, c'est notre passion" data-en="Cleanliness is our passion">La propreté, c'est notre passion</h2>
+      <div class="sline"></div>
+      <p class="sdesc sdesc-w t" data-fr="Nous ne faisons pas juste nettoyer — nous prenons soin de votre espace comme si c'était le nôtre." data-en="We don't just clean — we take care of your space as if it were our own.">Nous ne faisons pas juste nettoyer — nous prenons soin de votre espace comme si c'était le nôtre.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><span class="why-ico">🛡️</span><div class="why-title t" data-fr="Assurés & fiables" data-en="Insured & reliable">Assurés & fiables</div><p class="why-text t" data-fr="Tous nos employés sont vérifiés, formés et assurés. Vous pouvez nous faire confiance les yeux fermés." data-en="All our staff are vetted, trained and insured. You can trust us completely.">Tous nos employés sont vérifiés, formés et assurés. Vous pouvez nous faire confiance.</p></div>
+      <div class="why-card"><span class="why-ico">📅</span><div class="why-title t" data-fr="Horaires flexibles" data-en="Flexible scheduling">Horaires flexibles</div><p class="why-text t" data-fr="Tôt le matin, en soirée ou le weekend — on s'adapte à votre emploi du temps, pas l'inverse." data-en="Early morning, evenings or weekends — we adapt to your schedule, not the other way around.">Tôt le matin, soir ou weekend — on s'adapte à votre horaire.</p></div>
+      <div class="why-card"><span class="why-ico">💬</span><div class="why-title t" data-fr="Communication facile" data-en="Easy communication">Communication facile</div><p class="why-text t" data-fr="Réponse en moins de 48h, suivi transparent de vos demandes et service personnalisé à chaque étape." data-en="Response within 48h, transparent follow-up and personalized service at every step.">Réponse en 48h, suivi transparent et service personnalisé.</p></div>
+      <div class="why-card"><span class="why-ico">💰</span><div class="why-title t" data-fr="Prix compétitifs" data-en="Competitive pricing">Prix compétitifs</div><p class="why-text t" data-fr="Des tarifs honnêtes et transparents, sans frais cachés. La qualité premium à un prix juste." data-en="Honest, transparent pricing with no hidden fees. Premium quality at a fair price.">Tarifs honnêtes, sans frais cachés. Qualité premium à prix juste.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec sec-off">
+    <div class="shd">
+      <span class="stag t" data-fr="Témoignages" data-en="Testimonials">Témoignages</span>
+      <h2 class="stitle t" data-fr="Ils nous font confiance" data-en="They trust us">Ils nous font confiance</h2>
+      <div class="sline sline-t"></div>
+    </div>
+    <div class="testi-grid" style="max-width:1100px;margin:0 auto">
+      <div class="testi-card" style="background:var(--white);border:1px solid var(--lgray)">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text" style="color:var(--gray)" >"Service impeccable, équipe ponctuelle et professionnelle. Mon appartement n'a jamais été aussi propre. Je recommande sans hésitation !"</p>
+        <span class="testi-author" style="color:var(--teal)">Marie-Claire T. · Cliente résidentielle</span>
+      </div>
+      <div class="testi-card" style="background:var(--white);border:1px solid var(--lgray)">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text" style="color:var(--gray)">"Alphanex entretient nos bureaux depuis 6 mois. Toujours à l'heure, toujours impeccable. Nos employés adorent arriver dans un espace propre."</p>
+        <span class="testi-author" style="color:var(--teal)">Jean-François B. · PME commerciale</span>
+      </div>
+      <div class="testi-card" style="background:var(--white);border:1px solid var(--lgray)">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text" style="color:var(--gray)">"Grand ménage post-rénovation parfait. Ils ont tout nettoyé en détail, même les endroits qu'on oublie habituellement. Vraiment impressionnant."</p>
+        <span class="testi-author" style="color:var(--teal)">Sophie L. · Post-construction</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact" class="sec sec-white" style="text-align:center">
+    <div class="shd" style="margin-bottom:3rem">
+      <span class="stag t" data-fr="Demande de soumission" data-en="Request a Quote">Demande de soumission</span>
+      <h2 class="stitle t" data-fr="Obtenez votre soumission gratuite" data-en="Get your free quote">Obtenez votre soumission gratuite</h2>
+      <div class="sline sline-t"></div>
+      <p class="sdesc t" data-fr="Remplissez le formulaire et nous vous répondons dans les 48 heures avec une soumission personnalisée." data-en="Fill out the form and we'll respond within 48 hours with a personalized quote.">Remplissez le formulaire et nous vous répondons dans les 48 heures avec une soumission personnalisée.</p>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-box">
+        <h2 class="t" data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</h2>
+        <p class="sub t" data-fr="Votre demande sera envoyée directement à notre équipe. Nous vous répondons sous 48h avec une soumission gratuite et sans engagement." data-en="Your request will be sent directly to our team. We'll respond within 48h with a free, no-obligation quote.">Votre demande sera envoyée directement à notre équipe. Nous vous répondons sous 48h avec une soumission gratuite et sans engagement.</p>
+
+        <div class="cf" id="contactForm">
+          <div>
+            <label class="t" data-fr="Prénom & Nom" data-en="First & Last Name">Prénom & Nom</label>
+            <input id="fName" class="t-ph" data-fr="Marie Tremblay" data-en="Marie Tremblay" placeholder="Marie Tremblay"/>
+          </div>
+          <div>
+            <label class="t" data-fr="Courriel" data-en="Email">Courriel</label>
+            <input id="fEmail" type="email" class="t-ph" data-fr="votre@courriel.com" data-en="your@email.com" placeholder="votre@courriel.com"/>
+          </div>
+          <div>
+            <label class="t" data-fr="Téléphone" data-en="Phone">Téléphone</label>
+            <input id="fPhone" class="t-ph" data-fr="(514) 000-0000" data-en="(514) 000-0000" placeholder="(514) 000-0000"/>
+          </div>
+          <div>
+            <label class="t" data-fr="Type de service" data-en="Service Type">Type de service</label>
+            <select id="fService">
+              <option value="" class="t" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+              <option value="Entretien régulier résidentiel" class="t" data-fr="Entretien régulier (résidentiel)" data-en="Regular cleaning (residential)">Entretien régulier (résidentiel)</option>
+              <option value="Grand ménage résidentiel" class="t" data-fr="Grand ménage (résidentiel)" data-en="Deep clean (residential)">Grand ménage (résidentiel)</option>
+              <option value="Entretien commercial" class="t" data-fr="Entretien commercial" data-en="Commercial cleaning">Entretien commercial</option>
+              <option value="Post-construction" class="t" data-fr="Post-construction" data-en="Post-construction">Post-construction</option>
+              <option value="Fin de bail" class="t" data-fr="Fin de bail / déménagement" data-en="Move-in / Move-out">Fin de bail / déménagement</option>
+              <option value="Autre" class="t" data-fr="Autre / question" data-en="Other / question">Autre / question</option>
+            </select>
+          </div>
+          <div>
+            <label class="t" data-fr="Superficie approximative" data-en="Approximate area">Superficie approximative</label>
+            <select id="fSize">
+              <option value="" class="t" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+              <option value="Moins de 700 pc" class="t" data-fr="Moins de 700 pc (studio/1½)" data-en="Less than 700 sq ft (studio/1BR)">Moins de 700 pc (studio/1½)</option>
+              <option value="700-1200 pc" class="t" data-fr="700–1200 pc (2½–3½)" data-en="700–1200 sq ft (2–3 BR)">700–1200 pc (2½–3½)</option>
+              <option value="1200-2000 pc" class="t" data-fr="1200–2000 pc (4½–5½)" data-en="1200–2000 sq ft (4–5 BR)">1200–2000 pc (4½–5½)</option>
+              <option value="Plus de 2000 pc" class="t" data-fr="Plus de 2000 pc / maison" data-en="Over 2000 sq ft / house">Plus de 2000 pc / maison</option>
+              <option value="Local commercial" class="t" data-fr="Local commercial" data-en="Commercial space">Local commercial</option>
+            </select>
+          </div>
+          <div>
+            <label class="t" data-fr="Fréquence souhaitée" data-en="Desired frequency">Fréquence souhaitée</label>
+            <select id="fFreq">
+              <option value="" class="t" data-fr="Sélectionnez..." data-en="Select...">Sélectionnez...</option>
+              <option value="Une seule fois" class="t" data-fr="Une seule fois" data-en="One time">Une seule fois</option>
+              <option value="Hebdomadaire" class="t" data-fr="Hebdomadaire (1x/semaine)" data-en="Weekly (1x/week)">Hebdomadaire (1x/semaine)</option>
+              <option value="Bihebdomadaire" class="t" data-fr="Bihebdomadaire (1x/2 semaines)" data-en="Bi-weekly (1x/2 weeks)">Bihebdomadaire (1x/2 semaines)</option>
+              <option value="Mensuel" class="t" data-fr="Mensuel (1x/mois)" data-en="Monthly (1x/month)">Mensuel (1x/mois)</option>
+            </select>
+          </div>
+          <div class="cf-full">
+            <label class="t" data-fr="Message / détails supplémentaires" data-en="Message / additional details">Message / détails supplémentaires</label>
+            <textarea id="fMsg" class="t-ph" data-fr="Décrivez votre espace, vos besoins particuliers, disponibilités..." data-en="Describe your space, special requirements, availability..." placeholder="Décrivez votre espace, vos besoins particuliers, disponibilités..."></textarea>
+          </div>
+          <div id="formMsg"></div>
+          <div class="cf-submit">
+            <p class="form-note t" data-fr="Réponse garantie sous <span>48 heures</span>. Soumission gratuite et sans engagement." data-en="Guaranteed response within <span>48 hours</span>. Free quote, no obligation.">Réponse garantie sous <span>48 heures</span>. Soumission gratuite et sans engagement.</p>
+            <button class="btn-teal t" data-fr="Envoyer ma demande" data-en="Send My Request" onclick="sendForm()" id="submitBtn">Envoyer ma demande</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-logo">
+      <div class="lmw sm"><div class="lm-glow"></div><div class="lm-core"><span class="lm-a">A</span></div></div>
+      <span class="ft-brand">ALPHA<span class="g">NEX</span></span>
+    </div>
+    <div class="ft-links">
+      <a onclick="go('services')" class="t" data-fr="Services" data-en="Services">Services</a>
+      <a onclick="showPg('story')" class="t" data-fr="À propos" data-en="About">À propos</a>
+      <a onclick="go('contact')" class="t" data-fr="Soumission" data-en="Quote">Soumission</a>
+    </div>
+    <p>© 2026 Alphanex · Montréal, Québec · <span style="color:rgba(255,255,255,.35)">seb.lacasse2@gmail.com</span></p>
+  </footer>
+
+</div><!-- end pgMain -->
+
+<!-- ══════════════ STORY PAGE ══════════════ -->
+<div id="pgStory">
+  <div class="story-hero">
+    <div class="story-bg"></div>
+    <div class="story-inner">
+      <span class="stag t" data-fr="Notre Histoire" data-en="Our Story">Notre Histoire</span>
+      <h1><span class="t" data-fr="Né d'une passion pour la <em>propreté</em> et le service." data-en="Born from a passion for <em>cleanliness</em> and service.">Né d'une passion pour la <em>propreté</em> et le service.</span></h1>
+      <p class="t" data-fr="Alphanex a été fondé avec une conviction simple : chaque personne mérite un espace propre, sain et accueillant — que ce soit chez elle ou dans son entreprise." data-en="Alphanex was founded with a simple conviction: every person deserves a clean, healthy and welcoming space — whether at home or at work.">Alphanex a été fondé avec une conviction simple : chaque personne mérite un espace propre, sain et accueillant — que ce soit chez elle ou dans son entreprise.</p>
+    </div>
+  </div>
+
+  <div class="story-body">
+    <div style="max-width:660px;margin:0 auto 4rem;text-align:center">
+      <span class="stag t" data-fr="Le parcours" data-en="The Journey">Le parcours</span>
+      <h2 class="stitle t" data-fr="Construits sur la confiance" data-en="Built on trust">Construits sur la confiance</h2>
+      <div class="sline sline-t"></div>
+      <p class="sdesc t" data-fr="De nos premiers clients à une clientèle fidèle à travers Montréal, voici comment Alphanex est devenu synonyme de qualité." data-en="From our first clients to a loyal customer base across Montréal, here's how Alphanex became synonymous with quality.">De nos premiers clients à une clientèle fidèle à travers Montréal, voici comment Alphanex est devenu synonyme de qualité.</p>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot">🌱</div>
+        <div class="tl-box">
+          <span class="tl-yr t" data-fr="Les débuts" data-en="The Beginning">Les débuts</span>
+          <h3 class="tl-title t" data-fr="Premier client, première promesse" data-en="First client, first promise">Premier client, première promesse</h3>
+          <p class="tl-text t" data-fr="Alphanex débute avec une poignée de clients résidentiels à Montréal. Dès le départ, la priorité est claire : un travail irréprochable, une communication transparente et des clients qui sourient à notre départ." data-en="Alphanex starts with a handful of residential clients in Montréal. From day one, the priority is clear: impeccable work, transparent communication and clients who smile when we leave.">Alphanex débute avec quelques clients résidentiels à Montréal. Priorité : travail irréprochable et clients qui sourient à notre départ.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">📈</div>
+        <div class="tl-box">
+          <span class="tl-yr t" data-fr="Croissance" data-en="Growth">Croissance</span>
+          <h3 class="tl-title t" data-fr="Expansion vers le commercial" data-en="Expansion into commercial">Expansion vers le commercial</h3>
+          <p class="tl-text t" data-fr="Face à la demande grandissante, Alphanex élargit ses services aux bureaux et commerces. Formation approfondie de l'équipe, protocoles stricts et équipements professionnels pour répondre aux exigences commerciales." data-en="Responding to growing demand, Alphanex expands to offices and businesses. Thorough team training, strict protocols and professional equipment to meet commercial standards.">Élargissement aux bureaux et commerces. Formation d'équipe, protocoles stricts et équipements professionnels.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">🌿</div>
+        <div class="tl-box">
+          <span class="tl-yr t" data-fr="Innovation" data-en="Innovation">Innovation</span>
+          <h3 class="tl-title t" data-fr="Engagement écologique" data-en="Eco-friendly commitment">Engagement écologique</h3>
+          <p class="tl-text t" data-fr="Introduction de produits de nettoyage 100% écologiques. Parce qu'un espace propre ne doit pas se faire au détriment de la santé de votre famille ou de notre planète." data-en="Introduction of 100% eco-friendly cleaning products. Because a clean space shouldn't come at the expense of your family's health or our planet.">Introduction de produits 100% écologiques. Propre ne devrait pas nuire à votre famille ou à la planète.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">⭐</div>
+        <div class="tl-box">
+          <span class="tl-yr t" data-fr="Aujourd'hui" data-en="Today">Aujourd'hui</span>
+          <h3 class="tl-title t" data-fr="500+ clients satisfaits" data-en="500+ satisfied clients">500+ clients satisfaits</h3>
+          <p class="tl-text t" data-fr="Alphanex est aujourd'hui la référence locale pour l'entretien ménager de qualité à Montréal. Notre réputation est bâtie sur des milliers de visites réussies et des clients qui reviennent, mois après mois." data-en="Alphanex is now the local reference for quality cleaning in Montréal. Our reputation is built on thousands of successful visits and clients who come back, month after month.">Alphanex, référence locale pour l'entretien ménager de qualité à Montréal. Des milliers de visites réussies, des clients fidèles.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vals">
+      <h2><span class="t" data-fr="Nos <em>valeurs</em>" data-en="Our <em>values</em>">Nos <em>valeurs</em></span></h2>
+      <div class="vals-grid">
+        <div class="val-item"><span class="val-ico">✨</span><span class="val-title t" data-fr="Excellence" data-en="Excellence">Excellence</span><p class="val-text t" data-fr="Chaque coin, chaque surface — nettoyé avec le même soin." data-en="Every corner, every surface — cleaned with the same care.">Chaque coin, chaque surface nettoyé avec le même soin.</p></div>
+        <div class="val-item"><span class="val-ico">🤝</span><span class="val-title t" data-fr="Confiance" data-en="Trust">Confiance</span><p class="val-text t" data-fr="Vous nous ouvrez votre porte. On mérite cette confiance." data-en="You open your door to us. We earn that trust.">Vous nous ouvrez votre porte. On mérite cette confiance.</p></div>
+        <div class="val-item"><span class="val-ico">🌿</span><span class="val-title t" data-fr="Responsabilité" data-en="Responsibility">Responsabilité</span><p class="val-text t" data-fr="Produits sains pour vous, respectueux de l'environnement." data-en="Products safe for you, respectful of the environment.">Produits sains pour vous, respectueux de l'environnement.</p></div>
+        <div class="val-item"><span class="val-ico">😊</span><span class="val-title t" data-fr="Satisfaction" data-en="Satisfaction">Satisfaction</span><p class="val-text t" data-fr="Si vous n'êtes pas satisfait, on revient. Gratuitement." data-en="If you're not satisfied, we come back. For free.">Si vous n'êtes pas satisfait, on revient. Gratuitement.</p></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:3rem 0 1rem">
+      <h2 class="stitle t" data-fr="Prêt pour un espace impeccable ?" data-en="Ready for a spotless space?" style="margin-bottom:1rem">Prêt pour un espace impeccable ?</h2>
+      <div class="sline sline-t"></div>
+      <p class="sdesc t" data-fr="Soumission gratuite, réponse en 48h." data-en="Free quote, response in 48h." style="margin-bottom:2.5rem">Soumission gratuite, réponse en 48h.</p>
+      <br/>
+      <a class="btn-teal t" data-fr="Demander une soumission" data-en="Request a Quote" onclick="showPg('main');setTimeout(()=>go('contact'),80)" style="cursor:pointer">Demander une soumission</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-logo">
+      <div class="lmw sm"><div class="lm-glow"></div><div class="lm-core"><span class="lm-a">A</span></div></div>
+      <span class="ft-brand">ALPHA<span class="g">NEX</span></span>
+    </div>
+    <p>© 2026 Alphanex · Montréal, Québec</p>
+    <p>seb.lacasse2@gmail.com</p>
+  </footer>
+</div>
+
+<script>
+/* ── Particles ── */
+const pc=document.getElementById('spPtc');
+for(let i=0;i<45;i++){const p=document.createElement('div');p.className='sp-p';const s=1+Math.random()*2.5;p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;--d:${7+Math.random()*12}s;--dl:${Math.random()*10}s`;pc.appendChild(p)}
+
+/* ── Splash lang ── */
+const spT={
+  fr:{desc:'Services d\'entretien ménager professionnel pour votre maison et votre entreprise. <em>Propre. Fiable. Impeccable.</em>',btn:'Découvrir nos services <span class="sp-arr">→</span>'},
+  en:{desc:'Professional cleaning services for your home and business. <em>Clean. Reliable. Impeccable.</em>',btn:'Discover our services <span class="sp-arr">→</span>'}
+};
+function spLang(l){
+  document.querySelectorAll('.sp-lb').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l));
+  document.getElementById('spDesc').innerHTML=spT[l].desc;
+  document.getElementById('spBtnTxt').innerHTML=spT[l].btn;
+  setLang(l);
+}
+
+/* ── Enter ── */
+function enterSite(){
+  const s=document.getElementById('pgSplash');
+  s.classList.add('out');
+  setTimeout(()=>{s.style.display='none';document.getElementById('pgMain').style.display='block';document.getElementById('nav').classList.add('show');window.scrollTo(0,0)},750);
+}
+
+/* ── Pages ── */
+function showPg(p){
+  document.getElementById('pgMain').style.display=p==='main'?'block':'none';
+  document.getElementById('pgStory').style.display=p==='story'?'block':'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function go(id){setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})},60)}
+
+/* ── Language ── */
+function setLang(l){
+  document.querySelectorAll('.nlb').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l));
+  document.querySelectorAll('.t').forEach(el=>{const v=el.getAttribute('data-'+l);if(v)el.innerHTML=v});
+  document.querySelectorAll('.t-ph').forEach(el=>{const v=el.getAttribute('data-'+l);if(v)el.placeholder=v});
+  // select options
+  document.querySelectorAll('select option.t').forEach(o=>{const v=o.getAttribute('data-'+l);if(v)o.textContent=v});
+}
+
+/* ── Nav shadow ── */
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxShadow=window.scrollY>20?'0 2px 28px rgba(0,0,0,.35)':'none'});
+
+/* ── FORM SUBMIT via Formspree ── */
+async function sendForm(){
+  const name=document.getElementById('fName').value.trim();
+  const email=document.getElementById('fEmail').value.trim();
+  const phone=document.getElementById('fPhone').value.trim();
+  const service=document.getElementById('fService').value;
+  const size=document.getElementById('fSize').value;
+  const freq=document.getElementById('fFreq').value;
+  const msg=document.getElementById('fMsg').value.trim();
+  const msgEl=document.getElementById('formMsg');
+  const btn=document.getElementById('submitBtn');
+
+  // Basic validation
+  if(!name||!email||!service){
+    msgEl.style.display='block';
+    msgEl.className='err';
+    msgEl.innerHTML='⚠️ Veuillez remplir au moins votre nom, courriel et type de service. / Please fill in at least your name, email and service type.';
+    return;
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    msgEl.style.display='block';
+    msgEl.className='err';
+    msgEl.innerHTML='⚠️ Adresse courriel invalide. / Invalid email address.';
+    return;
+  }
+
+  btn.textContent='Envoi en cours...';
+  btn.disabled=true;
+
+  // Build email body
+  const body=`
+Nouvelle demande de soumission — Alphanex Entretien Ménager
+
+Nom: ${name}
+Courriel: ${email}
+Téléphone: ${phone||'Non fourni'}
+Service demandé: ${service}
+Superficie: ${size||'Non spécifiée'}
+Fréquence: ${freq||'Non spécifiée'}
+
+Message:
+${msg||'Aucun message supplémentaire'}
+
+---
+Envoyé depuis le site alphanex.ca
+  `.trim();
+
+  try{
+    // Using Formspree — free email forwarding service (no backend needed)
+    const res=await fetch('https://formspree.io/f/xkgwvjnj',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        name,email,phone,service,size,freq,message:msg,
+        _replyto:email,
+        _subject:`Soumission Alphanex — ${service} — ${name}`
+      })
+    });
+
+    if(res.ok){
+      msgEl.style.display='block';
+      msgEl.className='ok';
+      msgEl.innerHTML='✅ Votre demande a été envoyée avec succès ! Nous vous répondrons sous 48h. / Your request has been sent! We\'ll respond within 48h.';
+      // Clear form
+      ['fName','fEmail','fPhone','fMsg'].forEach(id=>document.getElementById(id).value='');
+      ['fService','fSize','fFreq'].forEach(id=>document.getElementById(id).selectedIndex=0);
+      btn.textContent='Message envoyé ✓';
+    } else {
+      throw new Error('Formspree error');
+    }
+  } catch(e){
+    // Fallback: open mailto
+    const mailtoLink=`mailto:seb.lacasse2@gmail.com?subject=Soumission Alphanex — ${encodeURIComponent(service)} — ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink,'_blank');
+    msgEl.style.display='block';
+    msgEl.className='ok';
+    msgEl.innerHTML='📧 Votre client de courriel s\'est ouvert avec votre demande. / Your email client opened with your request.';
+    btn.textContent='Envoyé ✓';
+  }
+  setTimeout(()=>{btn.textContent=btn.getAttribute('data-fr')||'Envoyer ma demande';btn.disabled=false},5000);
+}
+
+setLang('fr');
+</script>
+</body>
+</html>
