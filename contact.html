@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Démo - ALPHANEX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">A ALPHANEX</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="robots.html">Robots</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html" class="active btn-nav">Démo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <h1>Demande de démo</h1>
+        <p>Découvrez comment nos robots peuvent transformer votre opération de nettoyage</p>
+    </section>
+
+    <!-- Form Section -->
+    <section style="padding: 5rem 3rem; background: var(--color-secondary);">
+        <div class="form-container">
+            <h2>Obtenez votre démo gratuite</h2>
+            <p class="form-subtitle">Remplissez le formulaire ci-dessous et nous vous répondrons dans les 48 heures</p>
+            
+            <form id="demoForm" onsubmit="handleSubmit(event)">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Entreprise *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="email">Courriel *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="industry">Secteur d'activité *</label>
+                    <select id="industry" name="industry" required>
+                        <option value="">Sélectionnez votre secteur...</option>
+                        <option value="healthcare">Santé & Hôpitaux</option>
+                        <option value="retail">Détail & Shopping centers</option>
+                        <option value="manufacturing">Fabrication & Usines</option>
+                        <option value="education">Éducation</option>
+                        <option value="transportation">Transport & Aéroports</option>
+                        <option value="commercial">Bureau & Commercial</option>
+                        <option value="hospitality">Hôtellerie & Restauration</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="space">Superficie à nettoyer *</label>
+                        <select id="space" name="space" required>
+                            <option value="">Sélectionnez une option...</option>
+                            <option value="small">Moins de 1 000 m²</option>
+                            <option value="medium">1 000 - 5 000 m²</option>
+                            <option value="large">5 000 - 10 000 m²</option>
+                            <option value="xlarge">Plus de 10 000 m²</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="robot">Robot d'intérêt *</label>
+                        <select id="robot" name="robot" required>
+                            <option value="">Sélectionnez un robot...</option>
+                            <option value="cenobots">CenoBots</option>
+                            <option value="sparkoz">Sparkoz</option>
+                            <option value="both">Les deux</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Questions spéciales</label>
+                    <textarea id="message" name="message" placeholder="Décrivez vos besoins spécifiques et posez vos questions..."></textarea>
+                </div>
+
+                <div style="background: rgba(14, 165, 233, 0.1); border: 1px solid var(--color-accent); border-radius: 6px; padding: 1rem; margin-bottom: 1.5rem;">
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+                        <strong>✓ Réponse garantie dans les 48 heures</strong><br>
+                        <strong>✓ Consultation gratuite et sans engagement</strong><br>
+                        <strong>✓ Soutien personnalisé pour vos besoins spécifiques</strong>
+                    </p>
+                </div>
+
+                <button type="submit" class="form-submit">Soumettre ma demande</button>
+            </form>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border); border-radius: 8px; text-align: center;">
+                <p style="color: var(--color-text-muted); margin-bottom: 0.5rem;">Vous préférez discuter directement ?</p>
+                <p><a href="tel:+14380000000" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">+1 (438) 000-0000</a> ou <a href="mailto:seb.lacasse2@gmail.com" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">seb.lacasse2@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Demo Section -->
+    <section class="features">
+        <h2 class="section-title">Pourquoi demander une démo ?</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👀</div>
+                <h3>Voir en action</h3>
+                <p>Observez nos robots fonctionner en direct et poser vos questions</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>Analyse personnalisée</h3>
+                <p>Évaluation complète de votre espace et de vos besoins</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Solutions sur mesure</h3>
+                <p>Recommandations adaptées à votre secteur et budget</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>ROI calculé</h3>
+                <p>Estimations précises des économies et bénéfices</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎁</div>
+                <h3>Offre spéciale</h3>
+                <p>Tarifs préférentiels pour les premiers clients</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Support dédié</h3>
+                <p>Expert personnalisé tout au long du processus</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>ALPHANEX</h3>
+                <p>Distribution de robots de nettoyage autonome</p>
+                <p>Montréal, Québec • Canada</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="robots.html">Robots</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><a href="mailto:seb.lacasse2@gmail.com">seb.lacasse2@gmail.com</a></p>
+                <p><a href="tel:+14380000000">+1 (438) 000-0000</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Alphanex • Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const industry = document.getElementById('industry').value;
+            const space = document.getElementById('space').value;
+            const robot = document.getElementById('robot').value;
+            const message = document.getElementById('message').value;
+
+            const subject = `Demande de démo - ${company}`;
+            const body = `Nouvelle demande de démo reçue:
+
+NOM: ${name}
+ENTREPRISE: ${company}
+COURRIEL: ${email}
+TÉLÉPHONE: ${phone}
+SECTEUR: ${industry}
+SUPERFICIE: ${space}
+ROBOT D'INTÉRÊT: ${robot}
+
+MESSAGE:
+${message}
+
+Date: ${new Date().toLocaleString('fr-CA')}`;
+
+            window.location.href = `mailto:seb.lacasse2@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            document.getElementById('demoForm').reset();
+            alert('Merci ! Votre demande de démo a été envoyée. Nous vous contacterons très bientôt.');
+        }
+    </script>
+</body>
+</html>

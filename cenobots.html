@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CenoBots - ALPHANEX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">A ALPHANEX</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="robots.html" class="active">Robots</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html" class="btn-nav">Démo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Accueil</a> / 
+        <a href="robots.html">Robots</a> / 
+        <span>CenoBots</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <h1>CenoBots</h1>
+        <p>Leader mondial en robots de nettoyage autonome pour environnements commerciaux, hospitaliers et de détail</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-container">
+            <div style="margin-bottom: 3rem;">
+                <img id="mainImage" src="https://g-cdn.cz-robots.com/cdn/web/img/home-banner-poster_2.webp" alt="CenoBots Robot" class="main-image">
+                <div class="thumbnails">
+                    <img class="thumbnail active" src="https://g-cdn.cz-robots.com/cdn/web/img/home-banner-poster_2.webp" alt="CenoBots 1" onclick="changeImage(this)">
+                    <img class="thumbnail" src="https://g-cdn.cz-robots.com/cdn/web/img/home-partners-bc_1.webp" alt="CenoBots 2" onclick="changeImage(this)">
+                    <img class="thumbnail" src="https://g-cdn.cz-robots.com/cdn/web/img/home-partners-bch.webp" alt="CenoBots 3" onclick="changeImage(this)">
+                    <img class="thumbnail" src="https://g-cdn.cz-robots.com/cdn/web/img/home-partners-hospitality.webp" alt="CenoBots 4" onclick="changeImage(this)">
+                    <img class="thumbnail" src="https://g-cdn.cz-robots.com/cdn/web/img/home-partners-urnsvill-center-shopping-mall.jpg" alt="CenoBots 5" onclick="changeImage(this)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        <div class="details-container">
+            <div class="details-text">
+                <h2>À propos de CenoBots</h2>
+                <p>CenoBots est un leader mondial en solutions de nettoyage autonome, servant des clients prestigieux dans le secteur de la santé, du commerce, de l'hôtellerie et des transports.</p>
+                
+                <p>Notre technologie révolutionnaire combine l'intelligence artificielle avancée avec des systèmes de nettoyage ultra-performants pour garantir une propreté impeccable 24/7.</p>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Caractéristiques principales</h3>
+                <ul class="features-list">
+                    <li>Navigation AI avancée et adaptative</li>
+                    <li>Nettoyage professionnel ultra-efficace</li>
+                    <li>Certifications de sécurité internationales (FCC, CE, TÜV)</li>
+                    <li>Support client 24/7 dédié</li>
+                    <li>Batterie longue autonomie</li>
+                    <li>Gestion cloud intégrée</li>
+                    <li>Compatible avec différents types de surfaces</li>
+                    <li>Déploiement rapide et formation complète</li>
+                </ul>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Applications</h3>
+                <ul class="features-list">
+                    <li>Hôpitaux et établissements de santé</li>
+                    <li>Centres commerciaux et magasins de détail</li>
+                    <li>Hôtels et espaces de restauration</li>
+                    <li>Aéroports et gares</li>
+                    <li>Bureaux et espaces de travail</li>
+                    <li>Écoles et universités</li>
+                </ul>
+
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem;">Demander une démo</a>
+            </div>
+
+            <div class="details-specs">
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem; font-weight: 600;">Spécifications</h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Autonomie</p>
+                        <p style="font-weight: 600;">Jusqu'à 8 heures</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Superficie couverte</p>
+                        <p style="font-weight: 600;">Jusqu'à 5000 m²</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Vitesse de nettoyage</p>
+                        <p style="font-weight: 600;">4000 m² / 8 heures</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Système de navigation</p>
+                        <p style="font-weight: 600;">AI + LiDAR</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Types de surface</p>
+                        <p style="font-weight: 600;">Carrelage, béton, bois</p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Contrôle</p>
+                        <p style="font-weight: 600;">Application mobile + Web</p>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 2rem;">Obtenir un devis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Robots déployés mondialement</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Pays servis</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Disponibilité opérationnelle</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support technique</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Prêt à révolutionner votre nettoyage avec CenoBots ?</h2>
+        <p>Demandez une démo gratuite et découvrez comment nos robots peuvent transformer votre opération</p>
+        <a href="contact.html" class="btn btn-primary btn-large">Demander une démo CenoBots</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>ALPHANEX</h3>
+                <p>Distribution de robots de nettoyage autonome</p>
+                <p>Montréal, Québec • Canada</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="robots.html">Robots</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><a href="mailto:seb.lacasse2@gmail.com">seb.lacasse2@gmail.com</a></p>
+                <p><a href="tel:+14380000000">+1 (438) 000-0000</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Alphanex • Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage(thumbnail) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = thumbnail.src;
+            
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+    </script>
+</body>
+</html>
