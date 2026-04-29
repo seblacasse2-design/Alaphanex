@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Alphanex - Robots industriels de nouvelle génération pour automatiser vos opérations">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#001a4d">
     <title>Alphanex | Robots Industriels Haut de Gamme</title>
     <style>
         * {
@@ -50,10 +50,10 @@
 
         @keyframes glow {
             0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+                box-shadow: 0 0 20px rgba(0, 100, 255, 0.3);
             }
             50% {
-                box-shadow: 0 0 40px rgba(0, 200, 255, 0.6);
+                box-shadow: 0 0 40px rgba(0, 100, 255, 0.6);
             }
         }
 
@@ -79,10 +79,10 @@
 
         @keyframes wolfGlow {
             0%, 100% {
-                filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.4));
+                filter: drop-shadow(0 0 15px rgba(0, 100, 255, 0.4));
             }
             50% {
-                filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
+                filter: drop-shadow(0 0 30px rgba(0, 150, 255, 0.8));
             }
         }
 
@@ -94,7 +94,7 @@
             z-index: 1000;
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 100, 255, 0.3);
             animation: slideDown 0.6s ease-out;
         }
 
@@ -122,10 +122,7 @@
         .logo-text {
             font-size: 28px;
             font-weight: 700;
-            background: linear-gradient(135deg, #00d4ff, #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #0066ff;
             letter-spacing: 3px;
             text-transform: uppercase;
             font-family: 'Arial', sans-serif;
@@ -155,7 +152,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #00d4ff, #ffd700);
+            background: #0066ff;
             transition: width 0.3s ease;
         }
 
@@ -170,7 +167,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+            background: linear-gradient(135deg, #000000 0%, #001a4d 100%);
             position: relative;
             overflow: hidden;
         }
@@ -180,7 +177,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 100, 255, 0.1) 0%, transparent 70%);
             top: -200px;
             right: -200px;
             animation: float 6s ease-in-out infinite;
@@ -191,7 +188,7 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 150, 255, 0.1) 0%, transparent 70%);
             bottom: -150px;
             left: -150px;
             animation: float 8s ease-in-out infinite;
@@ -214,10 +211,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #00d4ff, #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #0066ff;
         }
 
         .hero p {
@@ -249,25 +243,26 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            color: #000;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            background: #0066ff;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 50px rgba(0, 212, 255, 0.8);
+            box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
+            background: #0052cc;
         }
 
         .btn-secondary {
             background: transparent;
             color: #fff;
-            border: 2px solid #ffd700;
+            border: 2px solid #0066ff;
         }
 
         .btn-secondary:hover {
-            background: #ffd700;
-            color: #000;
+            background: #0066ff;
+            color: #fff;
             transform: translateY(-3px);
         }
 
@@ -290,6 +285,10 @@
             font-weight: 700;
         }
 
+        .section-title h2 span {
+            color: #0066ff;
+        }
+
         .section-title p {
             font-size: 20px;
             color: #888;
@@ -305,36 +304,48 @@
         }
 
         .product-card {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 100, 255, 0.05) 0%, rgba(0, 50, 150, 0.05) 100%);
+            border: 1px solid rgba(0, 100, 255, 0.3);
             border-radius: 12px;
             transition: all 0.4s ease;
             animation: fadeInUp 1s ease-out;
+            overflow: hidden;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            border-color: #00d4ff;
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            border-color: #0066ff;
+            box-shadow: 0 20px 60px rgba(0, 100, 255, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-content {
+            padding: 40px;
         }
 
         .product-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #00d4ff, #ffd700);
-            border-radius: 12px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0066ff, #0099ff);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            margin-bottom: 30px;
+            font-size: 30px;
+            margin-bottom: 20px;
         }
 
         .product-card h3 {
             font-size: 32px;
             margin-bottom: 20px;
             font-weight: 700;
+            color: #0066ff;
         }
 
         .product-card p {
@@ -346,9 +357,9 @@
         /* ===================== BÉNÉFICES ===================== */
         .benefits {
             padding: 120px 40px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            background: linear-gradient(135deg, rgba(0, 100, 255, 0.05) 0%, rgba(0, 50, 150, 0.05) 100%);
+            border-top: 1px solid rgba(0, 100, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 100, 255, 0.3);
         }
 
         .benefits .section-title {
@@ -371,7 +382,7 @@
         .benefit-item-icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            background: linear-gradient(135deg, #0066ff, #0099ff);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -409,8 +420,8 @@
         }
 
         .industry-card {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            background: linear-gradient(135deg, rgba(0, 100, 255, 0.05) 0%, rgba(0, 50, 150, 0.05) 100%);
+            border: 1px solid rgba(0, 100, 255, 0.3);
             padding: 40px 30px;
             text-align: center;
             border-radius: 12px;
@@ -420,8 +431,8 @@
 
         .industry-card:hover {
             transform: translateY(-8px);
-            border-color: #00d4ff;
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+            border-color: #0066ff;
+            box-shadow: 0 15px 40px rgba(0, 100, 255, 0.2);
         }
 
         .industry-icon {
@@ -437,8 +448,8 @@
         /* ===================== STATISTIQUES ROI ===================== */
         .roi-section {
             padding: 120px 40px;
-            background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            background: linear-gradient(135deg, #000000 0%, #001a4d 100%);
+            border-top: 1px solid rgba(0, 100, 255, 0.3);
         }
 
         .roi-section .section-title {
@@ -461,10 +472,7 @@
         .roi-number {
             font-size: 64px;
             font-weight: 700;
-            background: linear-gradient(135deg, #00d4ff, #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #0066ff;
             margin-bottom: 15px;
         }
 
@@ -492,8 +500,8 @@
         }
 
         .testimonial-card {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            background: linear-gradient(135deg, rgba(0, 100, 255, 0.05) 0%, rgba(0, 50, 150, 0.05) 100%);
+            border: 1px solid rgba(0, 100, 255, 0.3);
             padding: 40px;
             border-radius: 12px;
             transition: all 0.4s ease;
@@ -502,12 +510,12 @@
 
         .testimonial-card:hover {
             transform: translateY(-8px);
-            border-color: #00d4ff;
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+            border-color: #0066ff;
+            box-shadow: 0 15px 40px rgba(0, 100, 255, 0.2);
         }
 
         .stars {
-            color: #ffd700;
+            color: #0066ff;
             font-size: 18px;
             margin-bottom: 15px;
         }
@@ -535,9 +543,9 @@
         /* ===================== CTA FINAL ===================== */
         .final-cta {
             padding: 120px 40px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            background: linear-gradient(135deg, rgba(0, 100, 255, 0.1) 0%, rgba(0, 50, 150, 0.1) 100%);
+            border-top: 1px solid rgba(0, 100, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 100, 255, 0.3);
             text-align: center;
         }
 
@@ -546,6 +554,10 @@
             margin-bottom: 30px;
             font-weight: 700;
             animation: fadeInUp 1s ease-out;
+        }
+
+        .final-cta h2 span {
+            color: #0066ff;
         }
 
         .final-cta p {
@@ -565,7 +577,7 @@
         /* ===================== FOOTER ===================== */
         footer {
             background: #000000;
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-top: 1px solid rgba(0, 100, 255, 0.3);
             padding: 80px 40px 40px;
         }
 
@@ -582,7 +594,7 @@
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 25px;
-            color: #00d4ff;
+            color: #0066ff;
         }
 
         .footer-section p {
@@ -600,7 +612,7 @@
         }
 
         .footer-section a:hover {
-            color: #00d4ff;
+            color: #0066ff;
         }
 
         .contact-info {
@@ -622,13 +634,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(0, 100, 255, 0.1);
             border-radius: 50%;
             transition: all 0.3s ease;
         }
 
         .social-links a:hover {
-            background: #00d4ff;
+            background: #0066ff;
             color: #000;
         }
 
@@ -640,7 +652,7 @@
         .contact-form input,
         .contact-form textarea {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 100, 255, 0.3);
             color: #fff;
             padding: 12px 15px;
             border-radius: 4px;
@@ -657,8 +669,8 @@
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: #00d4ff;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+            border-color: #0066ff;
+            box-shadow: 0 0 15px rgba(0, 100, 255, 0.3);
         }
 
         .contact-form textarea {
@@ -667,7 +679,7 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-top: 1px solid rgba(0, 100, 255, 0.3);
             padding-top: 40px;
             text-align: center;
             color: #666;
@@ -749,6 +761,10 @@
                 padding: 30px 20px;
             }
 
+            .product-content {
+                padding: 20px;
+            }
+
             .products,
             .benefits,
             .industries,
@@ -798,6 +814,10 @@
             .logo-text {
                 font-size: 16px;
             }
+
+            .product-image {
+                height: 250px;
+            }
         }
 
         /* ===================== SCROLL ANIMATIONS ===================== */
@@ -812,59 +832,46 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <!-- LOGO LOUP EN SVG -->
+                <!-- LOGO LOUP ISOMÉTRIQUE EN SVG -->
                 <svg class="wolf-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Dégradé -->
                     <defs>
                         <linearGradient id="wolfGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
                         </linearGradient>
-                        <filter id="wolfShadow">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
-                        </filter>
                     </defs>
                     
-                    <!-- Arrière-plan hexagone -->
-                    <polygon points="100,20 150,50 150,110 100,140 50,110 50,50" fill="url(#wolfGradient)" opacity="0.1"/>
-                    <polygon points="100,20 150,50 150,110 100,140 50,110 50,50" stroke="url(#wolfGradient)" stroke-width="2" fill="none"/>
+                    <!-- Face avant isométrique -->
+                    <path d="M 100 40 L 140 60 L 140 120 L 100 140 L 60 120 L 60 60 Z" fill="url(#wolfGradient)" stroke="#0066ff" stroke-width="1.5"/>
                     
-                    <!-- Corps du loup -->
-                    <ellipse cx="100" cy="100" rx="45" ry="50" fill="url(#wolfGradient)"/>
+                    <!-- Côté droit isométrique -->
+                    <path d="M 140 60 L 160 75 L 160 135 L 140 120 Z" fill="#0052cc" stroke="#0066ff" stroke-width="1.5"/>
                     
-                    <!-- Tête -->
-                    <circle cx="100" cy="60" r="35" fill="url(#wolfGradient)"/>
+                    <!-- Côté gauche isométrique -->
+                    <path d="M 60 60 L 40 75 L 40 135 L 60 120 Z" fill="#004999" stroke="#0066ff" stroke-width="1.5"/>
                     
-                    <!-- Oreilles gauche -->
-                    <path d="M 75 35 L 65 10 L 70 35 Z" fill="url(#wolfGradient)"/>
-                    <!-- Oreille droite -->
-                    <path d="M 125 35 L 135 10 L 130 35 Z" fill="url(#wolfGradient)"/>
+                    <!-- Oreille gauche isométrique -->
+                    <path d="M 75 45 L 85 35 L 85 55 L 75 50 Z" fill="url(#wolfGradient)" stroke="#0066ff" stroke-width="1.5"/>
                     
-                    <!-- Museau -->
-                    <ellipse cx="100" cy="72" rx="20" ry="18" fill="#ffd700" opacity="0.8"/>
+                    <!-- Oreille droite isométrique -->
+                    <path d="M 125 45 L 115 35 L 115 55 L 125 50 Z" fill="url(#wolfGradient)" stroke="#0066ff" stroke-width="1.5"/>
                     
-                    <!-- Yeux gauche -->
-                    <circle cx="85" cy="55" r="5" fill="#000"/>
-                    <circle cx="86" cy="54" r="2" fill="#fff"/>
+                    <!-- Museau avant -->
+                    <path d="M 90 80 L 110 80 L 110 100 L 90 100 Z" fill="#0099ff" stroke="#0066ff" stroke-width="1"/>
+                    
+                    <!-- Oeil gauche -->
+                    <circle cx="85" cy="75" r="4" fill="#fff"/>
+                    <circle cx="85" cy="75" r="2.5" fill="#000"/>
+                    
                     <!-- Oeil droit -->
-                    <circle cx="115" cy="55" r="5" fill="#000"/>
-                    <circle cx="116" cy="54" r="2" fill="#fff"/>
+                    <circle cx="115" cy="75" r="4" fill="#fff"/>
+                    <circle cx="115" cy="75" r="2.5" fill="#000"/>
                     
                     <!-- Nez -->
-                    <polygon points="100,72 97,80 103,80" fill="#000"/>
+                    <path d="M 100 90 L 97 95 L 103 95 Z" fill="#000"/>
                     
                     <!-- Gueule -->
-                    <path d="M 85 82 Q 100 90 115 82" stroke="#00d4ff" stroke-width="2" fill="none"/>
-                    
-                    <!-- Crocs -->
-                    <path d="M 90 85 L 88 95" stroke="#ffd700" stroke-width="1.5" fill="none"/>
-                    <path d="M 110 85 L 112 95" stroke="#ffd700" stroke-width="1.5" fill="none"/>
-                    
-                    <!-- Poitrine distinctive -->
-                    <ellipse cx="100" cy="105" rx="18" ry="20" fill="#ffd700" opacity="0.6"/>
-                    
-                    <!-- Contour/Aura luxe -->
-                    <circle cx="100" cy="100" r="55" stroke="url(#wolfGradient)" stroke-width="1" fill="none" opacity="0.5"/>
+                    <path d="M 90 98 Q 100 105 110 98" stroke="#0066ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
                 </svg>
                 <div class="logo-text">ALPHANEX</div>
             </div>
@@ -895,19 +902,25 @@
     <!-- SECTION PRODUITS -->
     <section class="products" id="produits">
         <div class="section-title">
-            <h2>Nos Solutions Robotiques</h2>
+            <h2>Nos Solutions <span>Robotiques</span></h2>
             <p>Découvrez les deux champions de l'automatisation industrielle</p>
         </div>
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-icon">🤖</div>
-                <h3>Cenobots</h3>
-                <p>Robot autonome conçu pour le nettoyage industriel, la logistique et le transport interne. Avec une précision extrême et une capacité de charge impressionnante, Cenobot transforme vos opérations de manutention avec une fiabilité 24/7.</p>
+                <img src="https://g-cdn.cz-robots.com/cdn/web/img/home-banner-poster_2.webp" alt="Cenobots" class="product-image">
+                <div class="product-content">
+                    <div class="product-icon">🤖</div>
+                    <h3>Cenobots</h3>
+                    <p>Robot autonome conçu pour le nettoyage industriel, la logistique et le transport interne. Avec une précision extrême et une capacité de charge impressionnante, Cenobot transforme vos opérations de manutention avec une fiabilité 24/7.</p>
+                </div>
             </div>
             <div class="product-card">
-                <div class="product-icon">⚡</div>
-                <h3>Sparkoz</h3>
-                <p>Robot mobile intelligent pour automatisation avancée, surveillance intelligente et opérations continues. Équipé d'une IA embarquée de pointe, Sparkoz s'adapte en temps réel à votre environnement de travail complexe.</p>
+                <img src="https://www.sparkoz.com/Private/g5/M00/2A/49/CgAGbGcI3x-APir-AAsautJYtok437.png" alt="Sparkoz" class="product-image">
+                <div class="product-content">
+                    <div class="product-icon">⚡</div>
+                    <h3>Sparkoz</h3>
+                    <p>Robot mobile intelligent pour automatisation avancée, surveillance intelligente et opérations continues. Équipé d'une IA embarquée de pointe, Sparkoz s'adapte en temps réel à votre environnement de travail complexe.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -915,7 +928,7 @@
     <!-- SECTION BÉNÉFICES -->
     <section class="benefits" id="benefices">
         <div class="section-title">
-            <h2>Pourquoi Choisir Alphanex ?</h2>
+            <h2>Pourquoi Choisir <span>Alphanex ?</span></h2>
             <p>Les avantages qui transforment votre entreprise</p>
         </div>
         <div class="benefits-grid">
@@ -955,7 +968,7 @@
     <!-- SECTION INDUSTRIES -->
     <section class="industries" id="industries">
         <div class="section-title">
-            <h2>Industries Servies</h2>
+            <h2>Industries <span>Servies</span></h2>
             <p>Solutions adaptées à vos secteurs d'activité</p>
         </div>
         <div class="industries-grid">
@@ -989,7 +1002,7 @@
     <!-- SECTION ROI / CHIFFRES -->
     <section class="roi-section" id="roi">
         <div class="section-title">
-            <h2>Résultats Mesurables</h2>
+            <h2>Résultats <span>Mesurables</span></h2>
             <p>Les chiffres qui parlent d'eux-mêmes</p>
         </div>
         <div class="roi-grid">
@@ -1015,7 +1028,7 @@
     <!-- SECTION TÉMOIGNAGES -->
     <section class="testimonials">
         <div class="section-title">
-            <h2>Ils Nous Font Confiance</h2>
+            <h2>Ils Nous Font <span>Confiance</span></h2>
             <p>Décourez comment nos clients transforment leur activité</p>
         </div>
         <div class="testimonials-grid">
@@ -1042,7 +1055,7 @@
 
     <!-- CTA FINAL -->
     <section class="final-cta">
-        <h2>Prêt à Automatiser Votre Entreprise ?</h2>
+        <h2>Prêt à Automatiser Votre <span>Entreprise ?</span></h2>
         <p>Découvrez comment nos robots peuvent augmenter votre productivité et réduire vos coûts. Planifiez une démonstration personnalisée dès aujourd'hui.</p>
         <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Planifier une Démonstration</button>
     </section>
@@ -1132,13 +1145,13 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 10px 40px rgba(0, 212, 255, 0.1)';
+                header.style.boxShadow = '0 10px 40px rgba(0, 100, 255, 0.2)';
             } else {
                 header.style.boxShadow = 'none';
             }
         });
 
-        // Loader lazy pour optimisation performance
+        // Lazy loading pour images
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
