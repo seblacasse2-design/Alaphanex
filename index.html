@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alphanex - Robots industriels de nouvelle génération pour automatiser vos opérations">
+    <meta name="theme-color" content="#000000">
+    <title>Alphanex | Robots Industriels Haut de Gamme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Trebuchet MS, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===================== ANIMATIONS ===================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(0, 200, 255, 0.6);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes wolfGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.4));
+            }
+            50% {
+                filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
+            }
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .wolf-logo {
+            width: 50px;
+            height: 50px;
+            animation: wolfGlow 3s ease-in-out infinite;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #ffd700);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===================== HERO SECTION ===================== */
+        .hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #00d4ff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.8);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #ffd700;
+        }
+
+        .btn-secondary:hover {
+            background: #ffd700;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* ===================== PRODUITS ===================== */
+        .products {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section-title h2 {
+            font-size: 56px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 20px;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 60px 40px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00d4ff, #ffd700);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .product-card h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .product-card p {
+            font-size: 18px;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        /* ===================== BÉNÉFICES ===================== */
+        .benefits {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .benefits .section-title {
+            margin-bottom: 80px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .benefit-item-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            margin: 0 auto 25px;
+        }
+
+        .benefit-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .benefit-item p {
+            color: #888;
+            font-size: 16px;
+        }
+
+        /* ===================== INDUSTRIES ===================== */
+        .industries {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .industries .section-title {
+            margin-bottom: 80px;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .industry-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-8px);
+            border-color: #00d4ff;
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .industry-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .industry-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        /* ===================== STATISTIQUES ROI ===================== */
+        .roi-section {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .roi-section .section-title {
+            margin-bottom: 80px;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .roi-card {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .roi-number {
+            font-size: 64px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .roi-label {
+            font-size: 20px;
+            color: #b0b0b0;
+            font-weight: 600;
+        }
+
+        /* ===================== TÉMOIGNAGES ===================== */
+        .testimonials {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials .section-title {
+            margin-bottom: 80px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 40px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: #00d4ff;
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            color: #b0b0b0;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-company {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* ===================== CTA FINAL ===================== */
+        .final-cta {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 56px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            color: #888;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.1s ease-out;
+        }
+
+        .final-cta .btn {
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: #000000;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 80px 40px 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #00d4ff;
+        }
+
+        .footer-section p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #00d4ff;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #00d4ff;
+            color: #000;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            color: #fff;
+            padding: 12px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #666;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            padding-top: 40px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 12px 20px;
+                flex-direction: row;
+            }
+
+            .logo-container {
+                gap: 10px;
+            }
+
+            .wolf-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 12px;
+            }
+
+            .hero {
+                margin-top: 100px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+
+            .products-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid,
+            .roi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 36px;
+            }
+
+            .product-card,
+            .industry-card,
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+
+            .products,
+            .benefits,
+            .industries,
+            .roi-section,
+            .testimonials,
+            .final-cta {
+                padding: 60px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .product-card h3 {
+                font-size: 24px;
+            }
+
+            .roi-number {
+                font-size: 48px;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .logo-text {
+                font-size: 16px;
+            }
+        }
+
+        /* ===================== SCROLL ANIMATIONS ===================== */
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <!-- LOGO LOUP EN SVG -->
+                <svg class="wolf-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Dégradé -->
+                    <defs>
+                        <linearGradient id="wolfGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="wolfShadow">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Arrière-plan hexagone -->
+                    <polygon points="100,20 150,50 150,110 100,140 50,110 50,50" fill="url(#wolfGradient)" opacity="0.1"/>
+                    <polygon points="100,20 150,50 150,110 100,140 50,110 50,50" stroke="url(#wolfGradient)" stroke-width="2" fill="none"/>
+                    
+                    <!-- Corps du loup -->
+                    <ellipse cx="100" cy="100" rx="45" ry="50" fill="url(#wolfGradient)"/>
+                    
+                    <!-- Tête -->
+                    <circle cx="100" cy="60" r="35" fill="url(#wolfGradient)"/>
+                    
+                    <!-- Oreilles gauche -->
+                    <path d="M 75 35 L 65 10 L 70 35 Z" fill="url(#wolfGradient)"/>
+                    <!-- Oreille droite -->
+                    <path d="M 125 35 L 135 10 L 130 35 Z" fill="url(#wolfGradient)"/>
+                    
+                    <!-- Museau -->
+                    <ellipse cx="100" cy="72" rx="20" ry="18" fill="#ffd700" opacity="0.8"/>
+                    
+                    <!-- Yeux gauche -->
+                    <circle cx="85" cy="55" r="5" fill="#000"/>
+                    <circle cx="86" cy="54" r="2" fill="#fff"/>
+                    <!-- Oeil droit -->
+                    <circle cx="115" cy="55" r="5" fill="#000"/>
+                    <circle cx="116" cy="54" r="2" fill="#fff"/>
+                    
+                    <!-- Nez -->
+                    <polygon points="100,72 97,80 103,80" fill="#000"/>
+                    
+                    <!-- Gueule -->
+                    <path d="M 85 82 Q 100 90 115 82" stroke="#00d4ff" stroke-width="2" fill="none"/>
+                    
+                    <!-- Crocs -->
+                    <path d="M 90 85 L 88 95" stroke="#ffd700" stroke-width="1.5" fill="none"/>
+                    <path d="M 110 85 L 112 95" stroke="#ffd700" stroke-width="1.5" fill="none"/>
+                    
+                    <!-- Poitrine distinctive -->
+                    <ellipse cx="100" cy="105" rx="18" ry="20" fill="#ffd700" opacity="0.6"/>
+                    
+                    <!-- Contour/Aura luxe -->
+                    <circle cx="100" cy="100" r="55" stroke="url(#wolfGradient)" stroke-width="1" fill="none" opacity="0.5"/>
+                </svg>
+                <div class="logo-text">ALPHANEX</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#produits">Produits</a></li>
+                    <li><a href="#benefices">Bénéfices</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#roi">ROI</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>La prochaine génération de <span>robots industriels</span></h1>
+            <p>Automatisez vos opérations avec la puissance et la précision d'Alphanex.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Demander une démo</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('produits').scrollIntoView({behavior: 'smooth'});">Voir les modèles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRODUITS -->
+    <section class="products" id="produits">
+        <div class="section-title">
+            <h2>Nos Solutions Robotiques</h2>
+            <p>Découvrez les deux champions de l'automatisation industrielle</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🤖</div>
+                <h3>Cenobots</h3>
+                <p>Robot autonome conçu pour le nettoyage industriel, la logistique et le transport interne. Avec une précision extrême et une capacité de charge impressionnante, Cenobot transforme vos opérations de manutention avec une fiabilité 24/7.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">⚡</div>
+                <h3>Sparkoz</h3>
+                <p>Robot mobile intelligent pour automatisation avancée, surveillance intelligente et opérations continues. Équipé d'une IA embarquée de pointe, Sparkoz s'adapte en temps réel à votre environnement de travail complexe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION BÉNÉFICES -->
+    <section class="benefits" id="benefices">
+        <div class="section-title">
+            <h2>Pourquoi Choisir Alphanex ?</h2>
+            <p>Les avantages qui transforment votre entreprise</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-item-icon">💰</div>
+                <h3>Réduction des Coûts</h3>
+                <p>Diminuez vos coûts opérationnels de jusqu'à 35% en automatisant les tâches répétitives et énergivores.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-item-icon">⏰</div>
+                <h3>Disponibilité 24/7</h3>
+                <p>Vos robots travaillent sans relâche, jour et nuit, pour une productivité ininterrompue et optimale.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-item-icon">🛡️</div>
+                <h3>Sécurité Accrue</h3>
+                <p>Éliminez les risques liés aux tâches dangereuses et créez un environnement de travail plus sûr pour vos équipes.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-item-icon">📈</div>
+                <h3>ROI Rapide</h3>
+                <p>Amortissez votre investissement en moins de 12 mois grâce aux gains de productivité immédiats.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-item-icon">👥</div>
+                <h3>Optimisation RH</h3>
+                <p>Redéployez votre main-d'œuvre vers des tâches à plus forte valeur ajoutée et créez des emplois de qualité.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-item-icon">🧠</div>
+                <h3>Intelligence Artificielle</h3>
+                <p>Technologie IA embarquée qui apprend et s'améliore continuellement pour une efficacité croissante.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION INDUSTRIES -->
+    <section class="industries" id="industries">
+        <div class="section-title">
+            <h2>Industries Servies</h2>
+            <p>Solutions adaptées à vos secteurs d'activité</p>
+        </div>
+        <div class="industries-grid">
+            <div class="industry-card">
+                <div class="industry-icon">🏢</div>
+                <h3>Entrepôts</h3>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🏭</div>
+                <h3>Usines</h3>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🍱</div>
+                <h3>Alimentaire</h3>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">💊</div>
+                <h3>Pharmaceutique</h3>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">🚚</div>
+                <h3>Logistique</h3>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">⚙️</div>
+                <h3>Manufacturier</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ROI / CHIFFRES -->
+    <section class="roi-section" id="roi">
+        <div class="section-title">
+            <h2>Résultats Mesurables</h2>
+            <p>Les chiffres qui parlent d'eux-mêmes</p>
+        </div>
+        <div class="roi-grid">
+            <div class="roi-card">
+                <div class="roi-number">+40%</div>
+                <div class="roi-label">Augmentation Productivité</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-number">-35%</div>
+                <div class="roi-label">Réduction Coûts Opérationnels</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-number">24/7</div>
+                <div class="roi-label">Disponibilité Totale</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-number">&lt;12m</div>
+                <div class="roi-label">ROI Garanti</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TÉMOIGNAGES -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>Ils Nous Font Confiance</h2>
+            <p>Décourez comment nos clients transforment leur activité</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"L'implémentation des robots Alphanex a transformé notre chaîne logistique. Nous avons vu une augmentation de 45% de notre efficacité opérationnelle en seulement 3 mois."</p>
+                <div class="testimonial-author">Jean Dupont</div>
+                <div class="testimonial-company">Directeur Général, LogistiCorp France</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Alphanex a révolutionné notre système de surveillance d'entrepôt. La technologie IA est impressionnante, et le support client est exceptionnel. Investissement excellent."</p>
+                <div class="testimonial-author">Marie Laurent</div>
+                <div class="testimonial-company">Responsable Opérations, PharmaDistrib</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Les robots Alphanex nous permettent de réduire nos coûts tout en augmentant la sécurité. C'est un partenariat gagnant-gagnant qui dépasse toutes nos attentes."</p>
+                <div class="testimonial-author">Pierre Moreau</div>
+                <div class="testimonial-company">VP Opérations Manufacturières, IndustrieForce</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+        <h2>Prêt à Automatiser Votre Entreprise ?</h2>
+        <p>Découvrez comment nos robots peuvent augmenter votre productivité et réduire vos coûts. Planifiez une démonstration personnalisée dès aujourd'hui.</p>
+        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Planifier une Démonstration</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À Propos</h3>
+                <p>Alphanex est le leader de l'automatisation robotique industrielle. Nous transformons les opérations manufacturing avec la technologie de demain, combinant puissance et précision.</p>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn">🔗</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="YouTube">▶️</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <span>📞</span>
+                    <p><a href="tel:+33123456789">+33 (0) 1 23 45 67 89</a></p>
+                </div>
+                <div class="contact-info">
+                    <span>✉️</span>
+                    <p><a href="mailto:contact@alphanex.com">contact@alphanex.com</a></p>
+                </div>
+                <div class="contact-info">
+                    <span>📍</span>
+                    <p>Paris, France | Amsterdam, Netherlands | Tokyo, Japan</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Formulaire de Contact</h3>
+                <form class="contact-form" onsubmit="handleContactForm(event)">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Votre email" required>
+                    <textarea placeholder="Votre message" required></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Alphanex. Tous droits réservés. | <a href="#" style="color: inherit;">Politique de Confidentialité</a> | <a href="#" style="color: inherit;">Conditions d'Utilisation</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments animables
+        document.querySelectorAll('.product-card, .benefit-item, .industry-card, .roi-card, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Gestion du formulaire de contact
+        function handleContactForm(event) {
+            event.preventDefault();
+            alert('Merci pour votre message ! Nous vous recontacterons très bientôt.');
+            event.target.reset();
+        }
+
+        // Smooth scroll pour tous les liens d'ancrage
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animation du logo au scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 40px rgba(0, 212, 255, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Loader lazy pour optimisation performance
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
