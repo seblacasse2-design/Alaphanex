@@ -1164,3 +1164,319 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de démonstration – Alphanex</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:  #0D47A1;
+      --blue-main:  #1565C0;
+      --blue-mid:   #1976D2;
+      --blue-lite:  #42A5F5;
+      --blue-pale:  #E3F2FD;
+      --white:      #FFFFFF;
+      --gray:       #B0BEC5;
+      --text:       #0D1B2A;
+    }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--blue-dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    /* Geometric background blobs */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -120px; left: -120px;
+      width: 480px; height: 480px;
+      background: var(--blue-mid);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      opacity: 0.25;
+      animation: floatA 8s ease-in-out infinite;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -80px; right: -80px;
+      width: 340px; height: 340px;
+      background: var(--blue-lite);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      opacity: 0.15;
+      animation: floatB 10s ease-in-out infinite;
+    }
+    @keyframes floatA { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(30px) rotate(6deg)} }
+    @keyframes floatB { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-20px) rotate(-8deg)} }
+
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 520px;
+      padding: 3rem 2.5rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+      animation: slideUp 0.6s cubic-bezier(.22,1,.36,1) both;
+    }
+    @keyframes slideUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .logo-hex {
+      width: 44px; height: 44px;
+    }
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    h1 span { color: var(--blue-mid); }
+    .subtitle {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .field { margin-bottom: 1.25rem; }
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #E0E7EF;
+      border-radius: 10px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: #F7FAFD;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue-mid);
+      box-shadow: 0 0 0 3px rgba(25,118,210,0.12);
+      background: var(--white);
+    }
+    textarea { resize: vertical; min-height: 90px; }
+
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--blue-main);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.1s;
+      position: relative;
+    }
+    .btn:hover  { background: var(--blue-dark); }
+    .btn:active { transform: scale(0.98); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .status {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: none;
+      text-align: center;
+    }
+    .status.success { background: #E8F5E9; color: #2E7D32; display: block; }
+    .status.error   { background: #FFEBEE; color: #C62828; display: block; }
+    .status.loading { background: var(--blue-pale); color: var(--blue-dark); display: block; }
+  </style>
+</head>
+<body>
+<div class="card">
+
+  <div class="logo-row">
+    <svg class="logo-hex" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(50,50)">
+        <polygon points="-12,-24 -18,-33 -6,-33" fill="#0D47A1"/>
+        <polygon points="12,-24 6,-33 18,-33" fill="#0D47A1"/>
+        <polygon points="0,-26 21,-13 21,13 0,26 -21,13 -21,-13" fill="#1565C0"/>
+        <polygon points="0,-19 16,-9.5 16,9.5 0,19 -16,9.5 -16,-9.5" fill="#1976D2"/>
+        <circle cx="-7" cy="-3" r="5" fill="#fff"/>
+        <circle cx="7" cy="-3" r="5" fill="#fff"/>
+        <circle cx="-7" cy="-3" r="2.5" fill="#1976D2"/>
+        <circle cx="7" cy="-3" r="2.5" fill="#1976D2"/>
+        <rect x="-8" y="6" width="16" height="3" rx="1.5" fill="#0D47A1"/>
+      </g>
+    </svg>
+    <span class="brand">Alphanex</span>
+  </div>
+
+  <h1>Demandez une <span>démonstration</span></h1>
+  <p class="subtitle">// ROBOTS INDUSTRIELS HAUT DE GAMME</p>
+
+  <form id="demoForm">
+    <div class="row2">
+      <div class="field">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+      </div>
+      <div class="field">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Tremblay" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email">Courriel</label>
+      <input type="email" id="email" name="email" placeholder="jean@entreprise.com" required>
+    </div>
+
+    <div class="field">
+      <label for="entreprise">Entreprise</label>
+      <input type="text" id="entreprise" name="entreprise" placeholder="Industries XYZ" required>
+    </div>
+
+    <div class="field">
+      <label for="secteur">Secteur d'activité</label>
+      <select id="secteur" name="secteur" required>
+        <option value="" disabled selected>Choisir...</option>
+        <option>Fabrication industrielle</option>
+        <option>Logistique & entreposage</option>
+        <option>Agroalimentaire</option>
+        <option>Pharmaceutique</option>
+        <option>Automobile</option>
+        <option>Autre</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Votre besoin (optionnel)</label>
+      <textarea id="message" name="message" placeholder="Décrivez brièvement votre application ou vos besoins..."></textarea>
+    </div>
+
+    <button class="btn" type="submit" id="submitBtn">
+      Envoyer la demande →
+    </button>
+  </form>
+
+  <div class="status" id="status"></div>
+</div>
+
+<script>
+  const GMAIL_MCP_URL = "https://gmailmcp.googleapis.com/mcp/v1";
+
+  document.getElementById('demoForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const status = document.getElementById('status');
+
+    const prenom     = document.getElementById('prenom').value.trim();
+    const nom        = document.getElementById('nom').value.trim();
+    const email      = document.getElementById('email').value.trim();
+    const entreprise = document.getElementById('entreprise').value.trim();
+    const secteur    = document.getElementById('secteur').value;
+    const message    = document.getElementById('message').value.trim();
+
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+    status.className = 'status loading';
+    status.textContent = '⏳ Envoi de votre demande...';
+
+    const subject = `🤖 Nouvelle demande de démo – ${prenom} ${nom} (${entreprise})`;
+    const body =
+`Nouvelle demande de démonstration reçue via alphanex.ca
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 NOM        : ${prenom} ${nom}
+📧 COURRIEL   : ${email}
+🏢 ENTREPRISE : ${entreprise}
+🏭 SECTEUR    : ${secteur}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 MESSAGE :
+${message || '(aucun message)'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Envoyé automatiquement depuis le formulaire alphanex.ca`;
+
+    try {
+      const response = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: "claude-sonnet-4-20250514",
+          max_tokens: 1000,
+          messages: [{
+            role: "user",
+            content: `Send an email using Gmail. To: me (the authenticated user's own email address). Subject: "${subject}". Body:\n\n${body}\n\nConfirm when sent.`
+          }],
+          mcp_servers: [{
+            type: "url",
+            url: GMAIL_MCP_URL,
+            name: "gmail-mcp"
+          }]
+        })
+      });
+
+      const data = await response.json();
+      const textContent = data.content?.filter(b => b.type === 'text').map(b => b.text).join('');
+      const success = textContent && (textContent.toLowerCase().includes('sent') || textContent.toLowerCase().includes('envoy'));
+
+      if (success || data.content?.some(b => b.type === 'mcp_tool_result')) {
+        status.className = 'status success';
+        status.textContent = '✅ Demande envoyée ! Nous vous contacterons sous 24h.';
+        document.getElementById('demoForm').reset();
+      } else {
+        throw new Error('Réponse inattendue');
+      }
+    } catch (err) {
+      status.className = 'status error';
+      status.textContent = '❌ Erreur lors de l\'envoi. Veuillez réessayer ou nous écrire directement.';
+      console.error(err);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Envoyer la demande →';
+  });
+</script>
+</body>
+</html>
