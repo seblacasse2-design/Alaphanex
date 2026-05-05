@@ -1090,10 +1090,21 @@
             </div>
             <div class="footer-section">
                 <h3>Formulaire de Contact</h3>
-<form action="https://formspree.io/f/xeenkjnz" method="POST">
-  <input type="email" name="email" placeholder="Email">
-  <textarea name="message"></textarea>
-  <button type="submit">Send</button>
+<form class="contact-form" action="https://formspree.io/f/xeenkjnz" method="POST">
+    
+    <input type="text" name="name" placeholder="Votre nom" required>
+    
+    <input type="email" name="email" placeholder="Votre email" required>
+
+    <textarea name="message" placeholder="Votre message" required></textarea>
+
+    <input type="hidden" name="_subject" value="Nouvelle demande de démo - Alphanex">
+    <input type="hidden" name="_replyto" value="">
+
+    <button type="submit" class="btn btn-primary" style="width: 100%;">
+        Demander une démo
+    </button>
+
 </form>
             </div>
         </div>
