@@ -1,87 +1,226 @@
-<!-- SECTION PRODUITS -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produits | Alphanex</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+/* HEADER SIMPLE */
+header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.9);
+  border-bottom: 1px solid rgba(0,100,255,0.3);
+}
+
+header a {
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* SECTION PRODUITS */
+.products {
+  padding: 100px 40px;
+  background: linear-gradient(135deg, #000000 0%, #001a4d 100%);
+  text-align: center;
+}
+
+.products h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 60px;
+}
+
+.brand-section {
+  margin-bottom: 80px;
+}
+
+.brand-section h2 {
+  color: #0066ff;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  background: linear-gradient(135deg, rgba(0, 100, 255, 0.05), rgba(0, 50, 150, 0.05));
+  border: 1px solid rgba(0, 100, 255, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  transition: 0.4s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  border-color: #0066ff;
+  box-shadow: 0 20px 50px rgba(0,100,255,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product-card h3 {
+  color: #0066ff;
+}
+
+.product-card p {
+  color: #b0b0b0;
+}
+
+.product-card ul {
+  text-align: left;
+  color: #b0b0b0;
+  margin: 15px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #0066ff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0052cc;
+}
+
+.cta-mini {
+  color: #0066ff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(0,100,255,0.3);
+  color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div><a href="index.html">← Retour à l'accueil</a></div>
+  <div><strong>ALPHANEX</strong></div>
+</header>
+
 <section class="products">
-  <div class="container">
-    <h1>Nos solutions robotiques professionnelles</h1>
-    <p class="subtitle">
-      Performance, hygiène et automatisation pour les environnements commerciaux, institutionnels et industriels.
-    </p>
+  <h1>Nos solutions robotiques</h1>
+  <p class="subtitle">
+    Automatisez vos opérations avec des robots performants, fiables et conçus pour le terrain.
+  </p>
 
-    <!-- CENOBOTS -->
-    <div class="brand-section">
-      <h2>Cenobots</h2>
-      <div class="product-grid">
+  <!-- CENOBOTS -->
+  <div class="brand-section">
+    <h2>Cenobots</h2>
+    <div class="product-grid">
 
-        <div class="product-card">
-          <img src="https://www.cenobots.com/uploads/l50.png" alt="Robot laveur Cenobot L50">
-          <h3>Robot laveur autonome L50</h3>
-          <p>
-            Robot laveur industriel intelligent conçu pour le nettoyage automatisé des grandes surfaces.
-            Idéal pour entrepôts, centres commerciaux et installations industrielles.
-          </p>
-          <ul>
-            <li>Navigation autonome avec LiDAR et IA</li>
-            <li>Cartographie intelligente multi-zones</li>
-            <li>Autonomie longue durée avec recharge automatique</li>
-            <li>Réduction majeure des coûts d’entretien</li>
-          </ul>
-          <a href="contact.html" class="btn">Demander une démo</a>
-        </div>
-
-        <div class="product-card">
-          <img src="https://www.cenobots.com/uploads/l50-side.png" alt="Robot nettoyage Cenobot">
-          <h3>Solution de nettoyage intelligent</h3>
-          <p>
-            Plateforme robotique avancée permettant un nettoyage constant, précis et sans intervention humaine.
-          </p>
-          <ul>
-            <li>Capteurs anti-collision 360°</li>
-            <li>Mode automatique et manuel</li>
-            <li>Surveillance en temps réel</li>
-            <li>Optimisation des opérations de maintenance</li>
-          </ul>
-          <a href="contact.html" class="btn">Demander une soumission</a>
-        </div>
-
+      <div class="product-card">
+        <img src="https://www.cenobots.com/uploads/l50.png">
+        <h3>Robot laveur autonome L50</h3>
+        <p>
+          Nettoyage intelligent des grandes surfaces avec navigation autonome et cartographie avancée.
+        </p>
+        <ul>
+          <li>Navigation LiDAR + IA</li>
+          <li>Recharge automatique</li>
+          <li>Optimisation des coûts d’entretien</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
       </div>
-    </div>
 
-    <!-- SPARKOZ -->
-    <div class="brand-section">
-      <h2>Sparkoz</h2>
-      <div class="product-grid">
-
-        <div class="product-card">
-          <img src="https://www.sparkoz.com/Private/g5/M00/2A/49/CgAGbGcI3x-APir-AAsautJYtok437.png" alt="Robot nettoyage Sparkoz TN70">
-          <h3>Robot laveur autonome TN70</h3>
-          <p>
-            Robot de nettoyage haute performance conçu pour les environnements commerciaux et institutionnels exigeants.
-          </p>
-          <ul>
-            <li>Nettoyage intelligent avec IA embarquée</li>
-            <li>Détection d’obstacles avancée</li>
-            <li>Fonctionnement continu 24/7</li>
-            <li>Interface simple et intuitive</li>
-          </ul>
-          <a href="contact.html" class="btn">Voir le produit</a>
-        </div>
-
-        <div class="product-card">
-          <img src="https://www.sparkoz.com/Private/g5/M00/2A/49/CgAGbGcI3x-APir-AAsautJYtok437.png" alt="Robot service Sparkoz">
-          <h3>Robot de service intelligent</h3>
-          <p>
-            Automatise les tâches internes comme le transport, la livraison et le support logistique dans vos installations.
-          </p>
-          <ul>
-            <li>Navigation multi-environnements</li>
-            <li>Adaptation en temps réel</li>
-            <li>Amélioration de l’efficacité opérationnelle</li>
-            <li>Réduction des tâches répétitives</li>
-          </ul>
-          <a href="contact.html" class="btn">En savoir plus</a>
-        </div>
-
+      <div class="product-card">
+        <img src="https://www.cenobots.com/uploads/l50-side.png">
+        <h3>Solution de nettoyage autonome</h3>
+        <p>
+          Robot conçu pour maintenir vos installations propres sans interruption.
+        </p>
+        <ul>
+          <li>Capteurs 360° anti-collision</li>
+          <li>Surveillance en temps réel</li>
+          <li>Performance constante</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
       </div>
-    </div>
 
+    </div>
   </div>
+
+  <!-- SPARKOZ -->
+  <div class="brand-section">
+    <h2>Sparkoz</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="https://www.sparkoz.com/Private/g5/M00/2A/49/CgAGbGcI3x-APir-AAsautJYtok437.png">
+        <h3>Robot laveur TN70</h3>
+        <p>
+          Robot de nettoyage autonome haute performance pour milieux commerciaux et institutionnels.
+        </p>
+        <ul>
+          <li>IA embarquée</li>
+          <li>Détection intelligente</li>
+          <li>Opération 24/7</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://www.sparkoz.com/Private/g5/M00/2A/49/CgAGbGcI3x-APir-AAsautJYtok437.png">
+        <h3>Robot de service intelligent</h3>
+        <p>
+          Automatisez vos opérations internes et améliorez la productivité de vos équipes.
+        </p>
+        <ul>
+          <li>Navigation autonome</li>
+          <li>Adaptation en temps réel</li>
+          <li>Réduction des tâches répétitives</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
+      </div>
+
+    </div>
+  </div>
+
 </section>
+
+<footer>
+  © 2026 Alphanex | <a href="index.html" style="color:#0066ff;">Retour à l'accueil</a>
+</footer>
+
+</body>
+</html>
