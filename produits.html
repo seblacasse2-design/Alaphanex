@@ -1,79 +1,227 @@
-<!-- CENOBOTS -->
-<div class="brand-section">
-  <h2>Cenobots</h2>
-  <div class="product-grid">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produits | Alphanex</title>
 
-    <div class="product-card">
-      <img src="https://www.cenobots.com/uploads/l50.png" alt="Cenobot L50">
-      <h3>Cenobot L50</h3>
-      <p>
-        Robot laveur autonome conçu pour les grandes surfaces industrielles et commerciales.
-        Idéal pour entrepôts, centres logistiques et usines.
-      </p>
-      <ul>
-        <li>Navigation LiDAR avec IA</li>
-        <li>Recharge automatique</li>
-        <li>Nettoyage haute performance</li>
-      </ul>
-      <p class="cta-mini">⚡ Démo rapide disponible</p>
-      <a href="index.html#contact" class="btn">Demander une démo</a>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.9);
+  border-bottom: 1px solid rgba(0,100,255,0.3);
+}
+
+header a {
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.products {
+  padding: 100px 40px;
+  background: linear-gradient(135deg, #000000 0%, #001a4d 100%);
+  text-align: center;
+}
+
+.products h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 60px;
+}
+
+.brand-section {
+  margin-bottom: 80px;
+}
+
+.brand-section h2 {
+  color: #0066ff;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  background: linear-gradient(135deg, rgba(0, 100, 255, 0.05), rgba(0, 50, 150, 0.05));
+  border: 1px solid rgba(0, 100, 255, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  transition: 0.4s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  border-color: #0066ff;
+  box-shadow: 0 20px 50px rgba(0,100,255,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product-card h3 {
+  color: #0066ff;
+}
+
+.product-card p {
+  color: #b0b0b0;
+}
+
+.product-card ul {
+  text-align: left;
+  color: #b0b0b0;
+  margin: 15px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #0066ff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0052cc;
+}
+
+.cta-mini {
+  color: #0066ff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(0,100,255,0.3);
+  color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div><a href="index.html">← Retour à l'accueil</a></div>
+  <div><strong>ALPHANEX</strong></div>
+</header>
+
+<section class="products">
+  <h1>Nos solutions robotiques</h1>
+  <p class="subtitle">
+    Automatisez vos opérations avec des robots performants, fiables et conçus pour le terrain.
+  </p>
+
+  <!-- CENOBOTS -->
+  <div class="brand-section">
+    <h2>Cenobots</h2>
+    <div class="product-grid">
+
+      <!-- L50 -->
+      <div class="product-card">
+        <img src="https://www.cenobots.com/uploads/l50.png">
+        <h3>Cenobot L50</h3>
+        <p>
+          Robot laveur autonome pour grandes surfaces commerciales et industrielles.
+        </p>
+        <ul>
+          <li>Navigation LiDAR + IA</li>
+          <li>Recharge automatique</li>
+          <li>Nettoyage haute performance</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
+      </div>
+
+      <!-- SP50 -->
+      <div class="product-card">
+        <img src="https://www.cenobots.com/uploads/sp50.png">
+        <h3>Cenobot SP50</h3>
+        <p>
+          Robot balayeur intelligent pour poussières et débris en continu.
+        </p>
+        <ul>
+          <li>Balayage puissant</li>
+          <li>Capteurs anti-collision</li>
+          <li>Faible entretien</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
+      </div>
+
     </div>
-
-    <div class="product-card">
-      <img src="https://www.cenobots.com/uploads/sp50.png" alt="Cenobot SP50">
-      <h3>Cenobot SP50</h3>
-      <p>
-        Robot balayeur intelligent pour la gestion des poussières et débris en continu.
-        Parfait pour environnements à fort trafic.
-      </p>
-      <ul>
-        <li>Balayage puissant et constant</li>
-        <li>Capteurs anti-collision</li>
-        <li>Faible entretien</li>
-      </ul>
-      <p class="cta-mini">⚡ Démo rapide disponible</p>
-      <a href="index.html#contact" class="btn">Demander une démo</a>
-    </div>
-
   </div>
-</div>
 
-<!-- SPARKOZ -->
-<div class="brand-section">
-  <h2>Sparkoz</h2>
-  <div class="product-grid">
+  <!-- SPARKOZ -->
+  <div class="brand-section">
+    <h2>Sparkoz</h2>
+    <div class="product-grid">
 
-    <div class="product-card">
-      <img src="https://www.sparkoz.com/Private/g5/M00/1F/8C/CgAGbF9_T10.png" alt="Sparkoz T10">
-      <h3>Sparkoz T10</h3>
-      <p>
-        Robot compact de nettoyage autonome idéal pour les espaces restreints comme
-        bureaux, commerces et établissements institutionnels.
-      </p>
-      <ul>
-        <li>Format compact et agile</li>
-        <li>Navigation intelligente</li>
-        <li>Parfait pour petites surfaces</li>
-      </ul>
-      <p class="cta-mini">⚡ Démo rapide disponible</p>
-      <a href="index.html#contact" class="btn">Demander une démo</a>
+      <!-- T10 -->
+      <div class="product-card">
+        <img src="https://www.sparkoz.com/Private/g5/M00/1F/8C/CgAGbF9_T10.png">
+        <h3>Sparkoz T10</h3>
+        <p>
+          Robot compact idéal pour bureaux, commerces et espaces restreints.
+        </p>
+        <ul>
+          <li>Format compact</li>
+          <li>Navigation intelligente</li>
+          <li>Idéal petites surfaces</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
+      </div>
+
+      <!-- T70 -->
+      <div class="product-card">
+        <img src="https://www.sparkoz.com/Private/g5/M00/2A/49/CgAGbGcI3x-APir-AAsautJYtok437.png">
+        <h3>Sparkoz T70</h3>
+        <p>
+          Robot laveur haute capacité pour grandes surfaces commerciales et institutionnelles.
+        </p>
+        <ul>
+          <li>Nettoyage intensif 24/7</li>
+          <li>IA avancée</li>
+          <li>Performance constante</li>
+        </ul>
+        <p class="cta-mini">⚡ Démo rapide disponible</p>
+        <a href="index.html#contact" class="btn">Demander une démo</a>
+      </div>
+
     </div>
-
-    <div class="product-card">
-      <img src="https://www.sparkoz.com/Private/g5/M00/2A/49/CgAGbGcI3x-APir-AAsautJYtok437.png" alt="Sparkoz T70">
-      <h3>Sparkoz T70</h3>
-      <p>
-        Robot de nettoyage industriel haute capacité conçu pour les grandes surfaces
-        commerciales et institutionnelles.
-      </p>
-      <ul>
-        <li>Nettoyage intensif 24/7</li>
-        <li>IA embarquée avancée</li>
-        <li>Performance constante</li>
-      </ul>
-      <p class="cta-mini">⚡ Démo rapide disponible</p>
-      <a href="index.html#contact" class="btn">Demander une démo</a>
-    </div>
-
   </div>
-</div>
+
+</section>
+
+<footer>
+  © 2026 Alphanex | <a href="index.html" style="color:#0066ff;">Retour à l'accueil</a>
+</footer>
+
+</body>
+</html>
