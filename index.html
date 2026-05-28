@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRM Simplifié</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      margin-top: 10px;
+    }
+
+    button.delete {
+      background: #ef4444;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>CRM Simplifié</h1>
+</header>
+
+<div class="container">
+
+  <!-- LOGIN -->
+  <div id="loginCard" class="card">
+    <h2>Connexion</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Mot de passe">
+    <button onclick="login()">Se connecter</button>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="hidden">
+
+    <div class="card">
+      <h2>Ajouter un contact</h2>
+      <input type="text" id="name" placeholder="Nom">
+      <input type="email" id="contactEmail" placeholder="Email">
+      <input type="text" id="phone" placeholder="Téléphone">
+      <button onclick="addContact()">Ajouter</button>
+    </div>
+
+    <div class="card">
+      <h2>Liste des contacts</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="contactList"></tbody>
+      </table>
+    </div>
+
+    <div class="center">
+      <button onclick="logout()">Déconnexion</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+  function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if(email && password) {
+      document.getElementById("loginCard").classList.add("hidden");
+      document.getElementById("dashboard").classList.remove("hidden");
+      renderContacts();
+    } else {
+      alert("Veuillez remplir tous les champs");
+    }
+  }
+
+  function logout() {
+    document.getElementById("loginCard").classList.remove("hidden");
+    document.getElementById("dashboard").classList.add("hidden");
+  }
+
+  function addContact() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("contactEmail").value;
+    const phone = document.getElementById("phone").value;
+
+    if(!name || !email) {
+      alert("Nom et email requis");
+      return;
+    }
+
+    contacts.push({ name, email, phone });
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+
+    document.getElementById("name").value = "";
+    document.getElementById("contactEmail").value = "";
+    document.getElementById("phone").value = "";
+
+    renderContacts();
+  }
+
+  function deleteContact(index) {
+    contacts.splice(index, 1);
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+    renderContacts();
+  }
+
+  function renderContacts() {
+    const list = document.getElementById("contactList");
+    list.innerHTML = "";
+
+    contacts.forEach((c, index) => {
+      list.innerHTML += `
+        <tr>
+          <td>${c.name}</td>
+          <td>${c.email}</td>
+          <td>${c.phone || ""}</td>
+          <td><button class="delete" onclick="deleteContact(${index})">X</button></td>
+        </tr>
+      `;
+    });
+  }
+</script>
+
+</body>
+</html>
