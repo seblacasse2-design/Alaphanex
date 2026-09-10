@@ -1,9 +1,0 @@
-<svg viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-  <path d="M-50 80 C 150 20, 300 140, 500 90 S 900 20, 1250 100" stroke="currentColor" stroke-width="1.4"/>
-  <path d="M-50 160 C 180 90, 340 220, 560 170 S 950 100, 1250 190" stroke="currentColor" stroke-width="1.4"/>
-  <path d="M-50 250 C 200 170, 380 300, 600 250 S 1000 180, 1250 270" stroke="currentColor" stroke-width="1.4"/>
-  <path d="M-50 340 C 220 260, 420 390, 640 330 S 1020 260, 1250 350" stroke="currentColor" stroke-width="1.4"/>
-  <path d="M-50 430 C 240 350, 460 470, 680 410 S 1040 340, 1250 430" stroke="currentColor" stroke-width="1.4"/>
-  <path d="M-50 520 C 260 440, 500 560, 720 500 S 1060 430, 1250 520" stroke="currentColor" stroke-width="1.4"/>
-  <path d="M-50 610 C 280 530, 540 650, 760 590 S 1080 520, 1250 610" stroke="currentColor" stroke-width="1.4"/>
-</svg>
