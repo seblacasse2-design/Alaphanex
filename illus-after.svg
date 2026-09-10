@@ -1,0 +1,17 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Terrain dégagé et débroussaillé, prêt à l'usage">
+  <rect width="400" height="300" fill="#E8A93D" opacity="0"/>
+  <rect width="400" height="300" fill="#C9C4B4"/>
+  <rect y="215" width="400" height="85" fill="#B7A97A"/>
+  <rect y="215" width="400" height="6" fill="#8A7C4E"/>
+  <g fill="#2E3F31" opacity=".9">
+    <circle cx="34" cy="150" r="20"/>
+    <rect x="30" y="150" width="8" height="65" fill="#4A3428"/>
+    <circle cx="368" cy="140" r="24"/>
+    <rect x="363" y="140" width="9" height="75" fill="#4A3428"/>
+  </g>
+  <g stroke="#8A7C4E" stroke-width="2" opacity=".6">
+    <line x1="0" y1="240" x2="400" y2="240"/>
+    <line x1="0" y1="260" x2="400" y2="260"/>
+    <line x1="0" y1="280" x2="400" y2="280"/>
+  </g>
+</svg>
